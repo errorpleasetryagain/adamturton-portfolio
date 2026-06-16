@@ -1,0 +1,92 @@
+import { notFound } from 'next/navigation';
+import { getAllPosts } from '@/lib/posts';
+import Link from 'next/link';
+import * as fs from 'fs';
+import * as path from 'path';
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+function parseFrontmatter(content: string) {
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!frontmatterMatch) return { frontmatter: {}, content };
+  
+  const frontmatter = frontmatterMatch[1]
+    .split('\n')
+    .reduce((acc: Record<string, string>, line) => {
+      const [key, ...valueParts] = line.split(':');
+      if (key && valueParts.length > 0) {
+        acc[key.trim()] = valueParts.join(':').trim();
+      }
+      return acc;
+    }, {});
+  
+  const contentStart = content.indexOf('---\n', 3) + 4;
+  return { frontmatter, content: content.slice(contentStart) };
+}
+
+export default async function WritingPostPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getAllPosts().find((p) => p.slug === slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const postsDirectory = path.join(process.cwd(), 'src/content/writing');
+  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+  const fileContent = fs.readFileSync(fullPath, 'utf8');
+  const { content: mdxContent } = parseFrontmatter(fileContent);
+
+  return (
+    <article className="mx-auto max-w-[var(--container-max)] px-6 py-24">
+      {/* Back link */}
+      <div className="mb-8">
+        <Link
+          href="/writing"
+          className="inline-flex items-center text-sm font-medium text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
+        >
+          <svg
+            className="mr-1 h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
+            <path d="M17 7L7 17M7 7h10M7 7v10" />
+          </svg>
+          Back to writing
+        </Link>
+      </div>
+
+      {/* Header */}
+      <header className="mb-12 max-w-3xl">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
+          <span className="rounded-full bg-[var(--accent-blue-bg)] px-3 py-1 text-xs font-medium text-[var(--accent-blue-text)]">
+            {post.category}
+          </span>
+          <span className="text-sm text-[var(--foreground-muted)]">
+            {post.date}
+          </span>
+        </div>
+        <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl">
+          {post.title}
+        </h1>
+      </header>
+
+      {/* Content - render MDX directly */}
+      <div 
+        className="prose prose-lg max-w-none text-[var(--foreground-muted)]"
+        dangerouslySetInnerHTML={{ __html: mdxContent.replace(/\n/g, '<br/>') }}
+      />
+    </article>
+  );
+}

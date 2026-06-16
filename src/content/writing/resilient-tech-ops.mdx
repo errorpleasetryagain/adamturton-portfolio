@@ -1,0 +1,39 @@
+---
+title: Building Resilient Tech Operations for Modern Teams
+date: June 16, 2026
+category: Tech Ops
+excerpt: Lessons learned from managing infrastructure at scale and building systems that survive real-world chaos.
+---
+
+# Building Resilient Tech Operations for Modern Teams
+
+After years of managing production infrastructure, I've learned that resilience isn't about preventing failures—it's about designing systems that gracefully handle them.
+
+## The Reality of Production
+
+No matter how much testing you do, production will always find new ways to break. The goal isn't perfection; it's rapid recovery.
+
+### Key Principles
+
+1. **Assume everything will fail** - Design for failure from day one
+2. **Automate recovery** - If something breaks twice, script the fix
+3. **Monitor what matters** - Focus on user-impacting metrics, not just system health
+4. **Document as you go** - Your future self will thank you during a 3 AM incident
+
+## Infrastructure as Code
+
+Treating infrastructure as code isn't just about version control—it's about reproducibility and confidence. When you can tear down and rebuild your entire stack with a single command, you sleep better at night.
+
+```bash
+# Example: Terraform apply with confidence
+terraform plan -out=tfplan
+terraform apply tfplan
+```
+
+## The Human Factor
+
+Tech ops isn't just about systems—it's about people. Build runbooks that anyone can follow, create clear escalation paths, and most importantly, foster a blameless culture where incidents become learning opportunities.
+
+## What's Next
+
+I'm exploring how AI agents can help with incident response and automated remediation. More on that in future posts.

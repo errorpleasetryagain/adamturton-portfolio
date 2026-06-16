@@ -1,0 +1,46 @@
+---
+title: AI Agents in Production: What Actually Works
+date: June 14, 2026
+category: AI/Agents
+excerpt: Real-world lessons from deploying AI agents for automation, monitoring, and decision support.
+---
+
+# AI Agents in Production: What Actually Works
+
+Everyone's talking about AI agents, but what actually works when you deploy them in production? After building and running several agent systems, here's what I've learned.
+
+## The Hype vs. Reality
+
+The marketing promises autonomous agents that can handle any task. The reality is more nuanced—and more interesting.
+
+### What Works Well
+
+- **Narrow, well-defined tasks** - Agents excel when given clear boundaries
+- **Human-in-the-loop workflows** - Augmentation beats full automation
+- **Structured data environments** - Agents struggle with ambiguity
+- **Retry mechanisms** - First attempts often fail; design for iteration
+
+### What Doesn't (Yet)
+
+- **Open-ended problem solving** - Still need human judgment
+- **Cross-system orchestration** - Integration complexity is real
+- **Long-horizon planning** - Agents lose context over extended tasks
+
+## My Agent Stack
+
+For production workloads, I've settled on a pragmatic approach:
+
+1. **LLM layer** - Task-specific models, not one-size-fits-all
+2. **Tool layer** - Well-documented APIs with strict schemas
+3. **Memory layer** - Vector stores for context, databases for state
+4. **Orchestration** - Simple state machines, not complex graphs
+
+## The Neurodivergent Advantage
+
+Interestingly, working with AI agents has made me more aware of my own cognitive patterns. Agents don't get tired, don't have bad days, and don't struggle with task-switching—but they also lack the intuitive leaps that come from lived experience.
+
+The best systems combine both.
+
+## Building Your First Agent
+
+Start small. Pick one repetitive task you do daily. Document the steps. Then automate 80% of it. The last 20% is where the real learning happens.
