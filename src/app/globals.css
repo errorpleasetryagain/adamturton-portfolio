@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* 
+ * Premium Minimalist Design Tokens
+ * Palette: Warm monochrome (Linear/Vercel/Raycast tier)
+ */
+
+:root {
+  /* Backgrounds */
+  --background: #F7F6F3;
+  --surface: #FFFFFF;
+  
+  /* Text */
+  --foreground: #111111;
+  --foreground-muted: #787774;
+  
+  /* Structural */
+  --border: #EAEAEA;
+  --border-light: rgba(0, 0, 0, 0.06);
+  
+  /* Accents (desaturated pastels for tags/badges only) */
+  --accent-blue-bg: #E1F3FE;
+  --accent-blue-text: #1F6C9F;
+  --accent-green-bg: #EDF3EC;
+  --accent-green-text: #346538;
+  --accent-red-bg: #FDEBEC;
+  --accent-red-text: #9F2F2D;
+  --accent-yellow-bg: #FBF3DB;
+  --accent-yellow-text: #956400;
+  
+  /* Typography */
+  --font-sans: 'Geist', 'SF Pro Display', 'Helvetica Neue', system-ui, sans-serif;
+  --font-serif: 'Lyon Text', 'Playfair Display', 'Georgia', serif;
+  --font-mono: 'Geist Mono', 'SF Mono', 'JetBrains Mono', monospace;
+  
+  /* Spacing */
+  --container-max: 1000px;
+  
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 200ms var(--ease-out-expo);
+  --transition-slow: 600ms var(--ease-out-expo);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --surface: #111111;
+    --foreground: #f0f0f0;
+    --foreground-muted: #888888;
+    --border: #222222;
+    --border-light: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+  
+  --ease-out-expo: var(--ease-out-expo);
+}
+
+/* Base styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll entry animation utility */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: scrollReveal var(--transition-slow) forwards;
+}
+
+@keyframes scrollReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered reveal for lists/grids */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: scrollReveal var(--transition-slow) forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0ms; }
+.stagger-item:nth-child(2) { animation-delay: 80ms; }
+.stagger-item:nth-child(3) { animation-delay: 160ms; }
+.stagger-item:nth-child(4) { animation-delay: 240ms; }
+.stagger-item:nth-child(5) { animation-delay: 320ms; }
+.stagger-item:nth-child(6) { animation-delay: 400ms; }
+.stagger-item:nth-child(7) { animation-delay: 480ms; }
+.stagger-item:nth-child(8) { animation-delay: 560ms; }
+.stagger-item:nth-child(9) { animation-delay: 640ms; }
+.stagger-item:nth-child(10) { animation-delay: 720ms; }
