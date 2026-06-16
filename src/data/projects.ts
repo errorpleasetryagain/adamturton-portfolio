@@ -115,34 +115,6 @@ export const projects: Project[] = [
       ]
     }
   },
-  {
-    slug: 'employment-tribunal',
-    title: 'Employment Tribunal Case',
-    tagline: 'Disability discrimination and whistleblowing case',
-    description:
-      'An ongoing employment tribunal case involving disability discrimination (ADHD), failure to make reasonable adjustments, and protected disclosures. The case has strong supporting evidence including an Occupational Health report linking ADHD symptoms to workplace performance concerns.',
-    status: 'case-in-progress',
-    technologies: ['Legal Documentation', 'Evidence Management', 'ACAS Early Conciliation'],
-    featured: true,
-    order: 4,
-    problem:
-      'I experienced disability discrimination at work related to my ADHD diagnosis, including failure to implement reasonable adjustments recommended by Occupational Health. Additionally, I made protected disclosures (whistleblowing) that were not properly addressed. The situation escalated to the point where legal action became necessary.',
-    approach:
-      'Documented all incidents meticulously, gathered medical evidence including the OH report that explicitly mapped ADHD symptoms to the performance concerns raised by management. Went through ACAS Early Conciliation before submitting the ET1 claim. The case focuses on three main claims: disability discrimination, failure to make reasonable adjustments, and detriment following protected disclosures.',
-    outcome:
-      'Case is currently in progress. The evidence is strong—the OH report provides clear medical backing for the connection between ADHD and the performance issues cited. ACAS conciliation did not result in settlement, so the case is proceeding to tribunal. This experience has deepened my understanding of employment law and disability rights in the workplace.',
-    whatIdDoDifferently:
-      'I would have documented concerns and requested adjustments in writing much earlier, creating a clearer paper trail from the start. Would also have sought legal advice before the situation escalated. That said, the experience has made me a stronger advocate for neurodivergent colleagues and more aware of creating inclusive environments.',
-    details: {
-      technicalDetails: [
-        'ET1 claim submitted following ACAS Early Conciliation',
-        'Occupational Health report as key evidence',
-        'Claims: disability discrimination, failure to make reasonable adjustments, whistleblowing detriment',
-        'Case number and details available on request',
-        'Ongoing—resolution expected in 2026'
-      ]
-    }
-  }
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

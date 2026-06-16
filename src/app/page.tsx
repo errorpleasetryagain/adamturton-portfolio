@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import TrustedBy from '@/components/layout/trusted-by';
 
 export default function Home() {
   return (
@@ -223,6 +224,9 @@ export default function Home() {
           </motion.article>
         </div>
       </section>
+
+      {/* Trusted By */}
+      <TrustedBy />
 
       {/* Latest Writing */}
       <section className="py-24">
