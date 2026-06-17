@@ -18,22 +18,20 @@ export default function Header() {
 
   return (
     <>
-      {/* Floating pill navbar */}
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
       >
-        <nav className="flex items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-2 py-2 shadow-[var(--shadow-sm)] backdrop-blur-xl">
+        <nav className="glass-nav flex items-center gap-1 rounded-full px-2 py-2">
           <Link
             href="/"
-            className="rounded-full px-4 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
+            className="rounded-full px-4 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[rgba(255,255,255,0.06)]"
           >
             Adam Turton
           </Link>
 
-          {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -44,14 +42,14 @@ export default function Header() {
                   className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
                     isActive
                       ? 'font-medium text-[var(--foreground)]'
-                      : 'text-[var(--foreground-muted)] hover:bg-[var(--border)] hover:text-[var(--foreground)]'
+                      : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-[rgba(255,255,255,0.06)]'
                   }`}
                 >
                   {link.label}
                   {isActive && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute inset-0 rounded-full bg-[var(--border)]"
+                      className="absolute inset-0 rounded-full bg-[rgba(255,255,255,0.08)]"
                       style={{ zIndex: -1 }}
                       transition={{ type: 'spring', bounce: 0.15, duration: 0.5 }}
                     />
@@ -61,20 +59,15 @@ export default function Header() {
             })}
             <Link
               href="/contact"
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                pathname === '/contact'
-                  ? 'bg-[var(--foreground)] text-[var(--background)]'
-                  : 'bg-[var(--foreground)] text-[var(--background)] hover:scale-[0.97]'
-              }`}
+              className="rounded-full bg-[var(--accent-primary)] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-[var(--accent-secondary)]"
             >
               Contact
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex md:hidden items-center justify-center rounded-full p-2 text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
+            className="flex md:hidden items-center justify-center rounded-full p-2 text-[var(--foreground)] transition-colors hover:bg-[rgba(255,255,255,0.06)]"
             aria-label="Toggle menu"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -88,7 +81,6 @@ export default function Header() {
         </nav>
       </motion.header>
 
-      {/* Mobile menu overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -96,7 +88,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[var(--background)] pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-[var(--background)]/95 backdrop-blur-xl pt-24 px-6 md:hidden"
           >
             <motion.div
               initial={{ opacity: 0, y: 8 }}
@@ -115,9 +107,7 @@ export default function Header() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={`text-2xl font-medium ${
-                      pathname === link.href
-                        ? 'text-[var(--foreground)]'
-                        : 'text-[var(--foreground-muted)]'
+                      pathname === link.href ? 'text-[var(--foreground)]' : 'text-[var(--foreground-muted)]'
                     }`}
                   >
                     {link.label}
@@ -132,7 +122,7 @@ export default function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="mt-8 inline-block rounded-full bg-[var(--foreground)] px-6 py-3 text-lg font-medium text-[var(--background)]"
+                  className="mt-8 inline-block rounded-full bg-[var(--accent-primary)] px-6 py-3 text-lg font-medium text-white"
                 >
                   Get in touch
                 </Link>
