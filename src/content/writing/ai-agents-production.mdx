@@ -1,46 +1,35 @@
 ---
-title: AI Agents in Production: What Actually Works
-date: June 14, 2026
-category: AI/Agents
-excerpt: Real-world lessons from deploying AI agents for automation, monitoring, and decision support.
+title: Using AI Agents for Real Work
+date: June 15, 2026
+category: AI
+excerpt: How I use Claude Code and MCP servers to automate job scanning, content pipelines, and site management across six websites.
 ---
 
-# AI Agents in Production: What Actually Works
+# Using AI Agents for Real Work
 
-Everyone's talking about AI agents, but what actually works when you deploy them in production? After building and running several agent systems, here's what I've learned.
+I run six content websites alongside looking for my next role. Without automation, that would be impossible. Here's how I actually use AI agents day to day.
 
-## The Hype vs. Reality
+## Job scanning
 
-The marketing promises autonomous agents that can handle any task. The reality is more nuanced—and more interesting.
+I built an automated job scan that runs daily. It searches LinkedIn and recruiter sites, scores each role against my criteria (sector fit, salary, location, culture), and produces a ranked shortlist. What used to take 45 minutes of scrolling now takes two minutes of reading.
 
-### What Works Well
+## Content pipelines
 
-- **Narrow, well-defined tasks** - Agents excel when given clear boundaries
-- **Human-in-the-loop workflows** - Augmentation beats full automation
-- **Structured data environments** - Agents struggle with ambiguity
-- **Retry mechanisms** - First attempts often fail; design for iteration
+Each of my sites publishes evidence-based articles. The pipeline works like this:
 
-### What Doesn't (Yet)
+1. AI researches the topic and pulls relevant clinical trials
+2. It drafts an article following my editorial guidelines
+3. I review, edit, and approve before publishing
+4. SEO metadata and structured data are generated automatically
 
-- **Open-ended problem solving** - Still need human judgment
-- **Cross-system orchestration** - Integration complexity is real
-- **Long-horizon planning** - Agents lose context over extended tasks
+The key is the review step. AI does the heavy lifting on research and first drafts. I do the editorial judgement and fact-checking. Nothing publishes without my sign-off.
 
-## My Agent Stack
+## Site management
 
-For production workloads, I've settled on a pragmatic approach:
+I use MCP server integrations to connect Claude Code with Gmail, MailerLite, Vercel, and Notion. This means I can manage deployments, check email subscriber stats, and update site content from one interface.
 
-1. **LLM layer** - Task-specific models, not one-size-fits-all
-2. **Tool layer** - Well-documented APIs with strict schemas
-3. **Memory layer** - Vector stores for context, databases for state
-4. **Orchestration** - Simple state machines, not complex graphs
+## What I've learned
 
-## The Neurodivergent Advantage
+AI agents are genuinely useful when you treat them as tools, not magic. They're good at repetitive tasks, research aggregation, and first drafts. They're bad at editorial judgement, nuance, and knowing when something sounds wrong.
 
-Interestingly, working with AI agents has made me more aware of my own cognitive patterns. Agents don't get tired, don't have bad days, and don't struggle with task-switching—but they also lack the intuitive leaps that come from lived experience.
-
-The best systems combine both.
-
-## Building Your First Agent
-
-Start small. Pick one repetitive task you do daily. Document the steps. Then automate 80% of it. The last 20% is where the real learning happens.
+The 90+ articles across my sites were all researched and drafted with AI help, then reviewed and edited by me. That's the model that works: AI handles the legwork, I make the decisions.

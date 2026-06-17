@@ -1,39 +1,28 @@
 ---
-title: Building Resilient Tech Operations for Modern Teams
-date: June 16, 2026
+title: Building Resilient Tech Operations
+date: June 10, 2026
 category: Tech Ops
-excerpt: Lessons learned from managing infrastructure at scale and building systems that survive real-world chaos.
+excerpt: What I learned about incident response, team structure, and keeping systems running at a fast-growing digital bank.
 ---
 
-# Building Resilient Tech Operations for Modern Teams
+# Building Resilient Tech Operations
 
-After years of managing production infrastructure, I've learned that resilience isn't about preventing failures—it's about designing systems that gracefully handle them.
+After managing technology operations at Starling Bank, supporting 800+ employees across critical banking infrastructure, a few things became clear about what actually makes operations work.
 
-## The Reality of Production
+## The basics matter more than the tools
 
-No matter how much testing you do, production will always find new ways to break. The goal isn't perfection; it's rapid recovery.
+Every vendor sells a silver bullet. In practice, the teams that recover fastest from incidents are the ones with clear runbooks, sensible escalation paths, and people who trust each other enough to say "I don't know" without embarrassment.
 
-### Key Principles
+We reduced mean time to resolution by 40% at Starling. The biggest single change wasn't a new tool. It was rewriting our escalation matrix so the right person got paged first, not third.
 
-1. **Assume everything will fail** - Design for failure from day one
-2. **Automate recovery** - If something breaks twice, script the fix
-3. **Monitor what matters** - Focus on user-impacting metrics, not just system health
-4. **Document as you go** - Your future self will thank you during a 3 AM incident
+## Automate the boring parts
 
-## Infrastructure as Code
+If something breaks twice and the fix is the same both times, script it. We consolidated vendor contracts and eliminated redundant tooling, saving roughly £250K. Most of that wasn't clever negotiation. It was noticing we were paying for three tools that did the same thing.
 
-Treating infrastructure as code isn't just about version control—it's about reproducibility and confidence. When you can tear down and rebuild your entire stack with a single command, you sleep better at night.
+## The human side
 
-```bash
-# Example: Terraform apply with confidence
-terraform plan -out=tfplan
-terraform apply tfplan
-```
+Tech ops is a people job disguised as a systems job. The best thing I did as a manager was run weekly one-to-ones that were genuinely about development, not status updates. When your team trusts you, they flag problems earlier. Earlier flags mean smaller incidents.
 
-## The Human Factor
+## What I'd do differently
 
-Tech ops isn't just about systems—it's about people. Build runbooks that anyone can follow, create clear escalation paths, and most importantly, foster a blameless culture where incidents become learning opportunities.
-
-## What's Next
-
-I'm exploring how AI agents can help with incident response and automated remediation. More on that in future posts.
+I'd invest in observability earlier. We were reactive for too long before building proper dashboards. And I'd push harder for blameless post-mortems from day one, rather than introducing them six months in.

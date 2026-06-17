@@ -23,22 +23,22 @@ export const projects: Project[] = [
   {
     slug: 'good-living-co',
     title: 'Good Living Co',
-    tagline: 'Six production websites built from scratch',
+    tagline: 'Six content websites I build and write for',
     description:
-      'Founded and built a portfolio of six niche content websites — from architecture and design through to SEO, affiliate monetisation, and email automation. Each site targets a specific vertical with conversion-focused design and AI-assisted content workflows.',
+      'A collection of six niche content websites I built with Next.js and MDX. I write evidence-based articles, handle the SEO, and manage affiliate links and email lists. Each site covers a different topic.',
     status: 'live',
     technologies: ['Next.js', 'MDX', 'Tailwind CSS', 'Awin', 'MailerLite', 'SEO'],
     url: 'https://maleoptimal.co.uk',
     featured: true,
     order: 1,
     problem:
-      'I wanted to prove that the systems-thinking approach I\'d developed in technology operations could apply to building a content business. The challenge was creating a scalable architecture that would let me launch and manage multiple niche websites without maintaining separate codebases.',
+      'I wanted a way to write about topics I\'m interested in (health, supplements, training) and learn full-stack web development at the same time. I needed something that would let me manage multiple sites without maintaining separate codebases.',
     approach:
-      'Designed a modular Next.js template with MDX for content management, enabling rapid deployment of new sites. Each site shares core architecture but with custom branding and content strategy. Implemented affiliate monetisation through Awin, built email capture funnels via MailerLite, and integrated AI-assisted content workflows. Focused on SEO from day one with semantic HTML, structured data, and Core Web Vitals optimisation.',
+      'Built a shared Next.js template with MDX for content. Each site has its own branding and content but shares the same architecture. I handle everything: writing, SEO, affiliate links through Awin, email lists through MailerLite, and deployment through Vercel.',
     outcome:
-      'Launched six production sites across different verticals. The shared architecture means I can spin up a new site in hours, not weeks. Each site scores 90+ on Core Web Vitals. The project demonstrates full-stack ownership — from infrastructure and deployment through to content strategy, monetisation, and marketing automation.',
+      'Six live sites with 90+ published articles between them. MaleOptimal is the main one, focused on evidence-based men\'s health content. Each site scores 90+ on Core Web Vitals. I can launch a new site in hours because of the shared template.',
     whatIdDoDifferently:
-      'I\'d invest more in content depth before launch — 20-30 articles instead of 10. I\'d also implement more comprehensive analytics from day one to better track conversion funnels. Would consider adding a headless CMS layer for non-technical content updates, though MDX has worked well for my use case.',
+      'I\'d write more content before launching each site. Having 20-30 articles ready instead of 10 would have helped with early SEO. I\'d also set up proper analytics from day one.',
     details: {
       sites: [
         'maleoptimal.co.uk',
@@ -76,10 +76,10 @@ export const projects: Project[] = [
     outcome:
       'Created a personal knowledge base that\'s been in continuous use for studying Hermetic philosophy. The offline-first approach means I can study anywhere without internet. The simple static structure ensures it will remain accessible for decades. Has become an essential tool for my philosophical practice.',
     whatIdDoDifferently:
-      'I\'d add sync capability (perhaps via encrypted JSON export/import) to share notes across devices. Would also implement better search functionality—currently it\'s basic text matching. Might consider adding spaced repetition for memorizing key passages.',
+      'I\'d add sync capability (perhaps via encrypted JSON export/import) to share notes across devices. Would also improve the search (currently basic text matching). Might consider adding spaced repetition for memorizing key passages.',
     details: {
       technicalDetails: [
-        '100% static site—no backend or database',
+        '100% static site, no backend or database',
         'localStorage for user data persistence',
         'Responsive design for mobile study sessions',
         'GitHub Pages for free, reliable hosting',
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     outcome:
       'Currently in active development. Core scraping infrastructure is functional, collecting prices from major UK dealers including Chards, BullionByPost, and SilverGoldBull UK. The premium calculation logic is implemented. Next phase is building the dashboard and adding price history tracking.',
     whatIdDoDifferently:
-      'I\'d start with a simpler MVP—perhaps just a spreadsheet with manual updates—to validate the concept before building the full automation. Would also partner with a dealer API if available rather than scraping. Planning to add alerts for when premiums drop below target thresholds.',
+      'I\'d start simpler, maybe just a spreadsheet with manual updates, to check if anyone actually wants this before building the full thing. Would also partner with a dealer API if available rather than scraping. Planning to add alerts for when premiums drop below target thresholds.',
     details: {
       technicalDetails: [
         'FastAPI for high-performance backend',
@@ -118,21 +118,21 @@ export const projects: Project[] = [
   {
     slug: 'ai-workflows',
     title: 'AI-Assisted Development Workflows',
-    tagline: 'Production AI agent pipelines and automation',
+    tagline: 'AI tools I use daily for real tasks',
     description:
-      'Building real workflows with AI agents — automated job scanning, content generation pipelines, multi-agent orchestration, and custom MCP server integrations. Practical AI applied to real problems, not demos.',
+      'Automated workflows I\'ve set up with Claude Code and MCP server integrations. Job scanning, content drafting, site deployments, and email management. Practical stuff, not demos.',
     status: 'live',
     technologies: ['Claude Code', 'MCP Servers', 'Python', 'TypeScript', 'Automation'],
     featured: true,
     order: 4,
     problem:
-      'Running a portfolio of six websites, a job search, and content operations as a solo founder means there are more tasks than hours. I needed to automate repetitive workflows without sacrificing quality or losing oversight.',
+      'Running six websites and a job search at the same time means a lot of repetitive tasks. I needed to automate the boring parts without losing control over quality.',
     approach:
-      'Built a suite of AI-powered workflows using Claude Code with custom MCP server integrations. Automated daily job scanning across LinkedIn and recruiter networks with scoring and filtering. Created content generation pipelines with human review checkpoints. Set up multi-agent orchestration for parallel tasks like site audits, SEO checks, and content updates.',
+      'Set up Claude Code with MCP server integrations for Gmail, MailerLite, Vercel, and Notion. Built a daily job scan that searches LinkedIn and scores roles against my criteria. Created content drafting pipelines with a review step before anything publishes.',
     outcome:
-      'These workflows now power all my current projects. Job scanning runs daily and surfaces scored opportunities. Content pipelines handle research, drafting, and SEO optimisation with human approval gates. The approach has been a genuine force multiplier — doing the work of a small team as one person.',
+      'The job scan saves me about 45 minutes a day. Content drafting is faster because AI handles research and first drafts while I do the editing and fact-checking. Site deployments and email list management happen from one interface.',
     whatIdDoDifferently:
-      'I\'d formalise the agent orchestration patterns earlier. Some of the early automation was ad-hoc and brittle. Building with structured MCP integrations from the start would have saved rework. I\'d also add better observability and logging for agent runs.',
+      'I\'d set up the MCP integrations properly from the start instead of adding them one at a time. Some of the early automation was held together with tape. I\'d also add better logging for when things go wrong.',
     details: {
       technicalDetails: [
         'Claude Code with custom agent configurations',

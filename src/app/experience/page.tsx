@@ -72,30 +72,91 @@ const roles = [
     linkLabel: 'selfridges.com',
   },
   {
-    id: 'apple-retail',
-    title: 'IS&T Retail Technician',
+    id: 'apple-ist',
+    title: 'IS&T Retail Store Operations',
     company: 'Apple',
-    period: '2021 — 2022',
+    period: 'Jan 2021 — Apr 2022',
+    location: 'Remote / Manchester, UK',
+    type: 'Technology / Corporate',
+    outcomes: [
+      {
+        metric: '500+ stores',
+        description: 'Supported global store technologies: networks, POS systems, and back-of-house infrastructure',
+        icon: 'store',
+      },
+      {
+        metric: 'Production support',
+        description: 'Configured networks and resolved issues remotely, ensuring minimal downtime across the retail estate',
+        icon: 'shield',
+      },
+      {
+        metric: 'Retail to corporate',
+        description: 'Moved from Apple retail into the IS&T engineering team that builds and operates global store systems',
+        icon: 'chart',
+      },
+    ],
+    systems: ['POS Infrastructure', 'Cisco Networking', 'MDM', 'In-Store Audio', 'Global Service Exchange'],
+    link: 'https://www.apple.com',
+    linkLabel: 'apple.com',
+  },
+  {
+    id: 'apple-genius',
+    title: 'Genius',
+    company: 'Apple',
+    period: 'Sep 2019 — Apr 2022',
     location: 'Manchester, UK',
     type: 'Technology / Retail',
     outcomes: [
       {
+        metric: 'ACMT certified',
+        description: 'Apple Certified Mac Technician: component-level hardware diagnostics and repair across the full Mac range',
+        icon: 'trophy',
+      },
+      {
         metric: '200+ tickets/month',
-        description: 'Diagnosed and repaired hardware faults, managed escalated technical cases',
+        description: 'Diagnosed and repaired Mac, iPhone, iPad hardware using Apple Service Toolkit (AST 2) and GSX',
         icon: 'ticket',
       },
       {
         metric: '98% CSAT',
-        description: 'Consistently highest customer satisfaction scores in region',
+        description: 'Consistently highest customer satisfaction scores in the region',
         icon: 'star',
       },
       {
         metric: 'Mentored 8 technicians',
-        description: 'Trained new hires on diagnostic procedures and repair workflows',
+        description: 'Trained technical experts and specialists on diagnostic procedures and repair workflows',
         icon: 'mentor',
       },
     ],
-    systems: ['Apple Diagnostics', 'GSX', 'Jamf', 'macOS', 'iOS'],
+    systems: ['AST 2', 'GSX', 'Apple Diagnostics', 'Jamf', 'macOS', 'iOS'],
+    link: 'https://www.apple.com/retail',
+    linkLabel: 'apple.com/retail',
+  },
+  {
+    id: 'apple-tech-expert',
+    title: 'Technical Expert',
+    company: 'Apple',
+    period: '2018 — 2019',
+    location: 'Manchester, UK',
+    type: 'Technology / Retail',
+    outcomes: [
+      {
+        metric: 'iPhone repairs',
+        description: 'Authorised to perform iPhone hardware repairs: screen replacements, battery swaps, and component diagnosis',
+        icon: 'ticket',
+      },
+      {
+        metric: 'Genius Bar triage',
+        description: 'Diagnosed hardware vs software issues, escalating complex Mac repairs to Geniuses',
+        icon: 'speed',
+      },
+      {
+        metric: 'Training delivery',
+        description: 'Trained new hires on Apple diagnostic tools and repair processes',
+        icon: 'mentor',
+      },
+    ],
+    systems: ['Apple Diagnostics', 'GSX', 'iOS', 'macOS'],
     link: 'https://www.apple.com/retail',
     linkLabel: 'apple.com/retail',
   },
@@ -103,27 +164,27 @@ const roles = [
     id: 'apple-specialist',
     title: 'Specialist',
     company: 'Apple',
-    period: 'Feb 2016 — 2021',
+    period: 'Feb 2016 — 2018',
     location: 'Manchester, UK',
     type: 'Technology / Retail',
     outcomes: [
       {
         metric: 'Top 10% performer',
-        description: 'Recognised for product knowledge and customer engagement',
+        description: 'Recognised for product knowledge and customer engagement across Mac, iPad, and iPhone',
         icon: 'trophy',
       },
       {
-        metric: '£2M+ annual sales',
-        description: 'Consistently exceeded targets in Mac and iPad categories',
-        icon: 'sales',
-      },
-      {
-        metric: 'Customer loyalty',
-        description: 'Built repeat customer base through consultative selling approach',
+        metric: 'Consultative selling',
+        description: 'Needs-based customer conversations using Apple\'s methodology, not traditional sales pressure',
         icon: 'heart',
       },
+      {
+        metric: 'Launch events',
+        description: 'Managed customer flow during iPhone X launch and other high-volume product launches',
+        icon: 'users',
+      },
     ],
-    systems: ['EasyPay', 'Apple Store App', 'Concierge', 'Salesforce'],
+    systems: ['EasyPay', 'Apple Store App', 'Concierge'],
     link: 'https://www.apple.com',
     linkLabel: 'apple.com',
   },
@@ -230,12 +291,13 @@ export default function ExperiencePage() {
           </div>
 
           <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl lg:text-6xl">
-            Building systems. Leading teams. Delivering results.
+            Experience
           </h1>
 
           <p className="max-w-[65ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-            A track record of running technology operations in fast-paced environments. 
-            From fintech to luxury retail — focused on outcomes, not activities.
+            Ten years in technology operations. Started at Apple in 2016,
+            progressed through four roles to corporate IS&amp;T, then moved into
+            multi-site retail management at Selfridges and fintech at Starling Bank.
           </p>
         </motion.div>
       </section>
@@ -361,7 +423,7 @@ export default function ExperiencePage() {
             },
             {
               title: 'Team Leadership',
-              items: ['Performance Management', 'Hiring & Onboarding', 'Cross-functional Collaboration', 'Mentorship', 'Stakeholder Communication'],
+              items: ['Performance Management', 'Hiring & Onboarding', 'Working across teams', 'Mentoring', 'Clear communication up and down'],
               color: 'green',
             },
             {
@@ -430,11 +492,10 @@ export default function ExperiencePage() {
           className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-12 text-center md:p-20"
         >
           <h2 className="mb-6 text-3xl font-medium tracking-tight text-[var(--foreground)] md:text-4xl">
-            Let's build something resilient
+            Get in touch
           </h2>
           <p className="mx-auto mb-8 max-w-[50ch] text-[var(--foreground-muted)]">
-            Currently looking for senior IT/Tech Ops roles. 
-            Remote or UK-based. Let's talk about what you're building.
+            Looking for senior IT/Tech Ops roles. Remote or UK-based.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

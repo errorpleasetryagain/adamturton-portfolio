@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adam Turton — Technology Operations Leader",
-  description: "10+ years leading technology operations across Apple, Selfridges, and Starling Bank. Now building production websites and AI-powered tools. Open to senior IT/Tech Ops roles.",
+  title: "Adam Turton",
+  description: "Technology operations leader. Ten years across Apple, Selfridges, and Starling Bank. Writes about men's health. Builds websites. Looking for senior IT/Tech Ops roles.",
 };
 
 export default function RootLayout({

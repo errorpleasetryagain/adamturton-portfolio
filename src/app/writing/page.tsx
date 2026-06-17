@@ -12,8 +12,17 @@ export default async function WritingPage() {
           Writing
         </h1>
         <p className="text-lg leading-relaxed text-[var(--foreground-muted)]">
-          Thoughts on tech operations, AI agents, neurodivergence at work, and 
-          building passive income streams.
+          Notes on tech ops, AI tools, and things I&apos;ve learned along the way.
+          I also write evidence-based health content at{' '}
+          <a
+            href="https://maleoptimal.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline text-[var(--foreground)]"
+          >
+            maleoptimal.co.uk
+          </a>
+          .
         </p>
       </div>
 
