@@ -25,9 +25,9 @@ export default function AboutPage() {
             </h1>
 
             <p className="mb-8 max-w-[60ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-              I build resilient systems and lead teams that deliver. Currently running Good Living Co, 
-              a portfolio of 6 content sites generating passive income. Previously at Starling Bank. 
-              Open to senior IT/Tech Ops roles.
+              10+ years leading technology operations across Apple, Selfridges, and Starling Bank.
+              Now running Good Living Co — a portfolio of six production websites I built from
+              scratch. Open to senior IT/Tech Ops roles.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -90,24 +90,24 @@ export default function AboutPage() {
           <div className="h-px w-24 bg-[var(--border)]" />
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <motion.article
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
+            className="card-hover rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]">
               <span className="text-lg font-medium text-[var(--foreground)]">1</span>
             </div>
             <h3 className="mb-3 text-lg font-medium text-[var(--foreground)]">
-              The Foundation
+              Apple
             </h3>
             <p className="text-[var(--foreground-muted)]">
-              Started in infrastructure and service management, learning the hard way that 
-              resilient systems require both technical rigor and human understanding. Built 
-              my career on bridging the gap between technical teams and business outcomes.
+              Six years progressing from Specialist to IS&amp;T Retail Technician.
+              Learned how world-class operations work from the inside — diagnostics,
+              mentoring, and customer obsession at scale.
             </p>
           </motion.article>
 
@@ -116,19 +116,18 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
+            className="card-hover rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]">
               <span className="text-lg font-medium text-[var(--foreground)]">2</span>
             </div>
             <h3 className="mb-3 text-lg font-medium text-[var(--foreground)]">
-              Starling Bank
+              Selfridges
             </h3>
-            <p className="text-[var(--foreground)]">
-              Led technology operations at a fast-growing digital bank. Managed critical 
-              infrastructure, incident response, and cross-functional delivery. Learned 
-              what happens when scale meets complexity — and when neurodivergence isn't 
-              accommodated.
+            <p className="text-[var(--foreground-muted)]">
+              Regional technology manager across five stores. Ran POS infrastructure,
+              led a team of engineers, and kept systems up through Black Friday
+              and Boxing Day with zero downtime.
             </p>
           </motion.article>
 
@@ -137,18 +136,38 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 md:col-span-1"
+            className="card-hover rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
           >
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]">
               <span className="text-lg font-medium text-[var(--foreground)]">3</span>
             </div>
             <h3 className="mb-3 text-lg font-medium text-[var(--foreground)]">
+              Starling Bank
+            </h3>
+            <p className="text-[var(--foreground-muted)]">
+              Led technology operations at a fast-growing digital bank — 15-person team,
+              critical infrastructure, incident response, and cross-functional delivery
+              supporting 800+ employees.
+            </p>
+          </motion.article>
+
+          <motion.article
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="card-hover rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
+          >
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]">
+              <span className="text-lg font-medium text-[var(--foreground)]">4</span>
+            </div>
+            <h3 className="mb-3 text-lg font-medium text-[var(--foreground)]">
               Good Living Co
             </h3>
             <p className="text-[var(--foreground-muted)]">
-              Now building a portfolio of 6 passive income content sites. Full-stack 
-              ownership: Next.js, MDX, affiliate monetisation, SEO, email lists. 
-              Proving that systems thinking applies to content businesses too.
+              Founded a portfolio of six production websites. Full-stack ownership:
+              Next.js, SEO, affiliate monetisation, email automation, and AI-assisted
+              content workflows. Systems thinking applied to building a business.
             </p>
           </motion.article>
         </div>
@@ -212,8 +231,8 @@ export default function AboutPage() {
               </li>
             </ul>
             <p className="mt-6 text-sm text-[var(--foreground-muted)]">
-              I don't need accommodations to succeed — I need clarity, autonomy, and 
-              the space to work in bursts. The output speaks for itself.
+              I need clarity, autonomy, and the space to work in bursts.
+              The output speaks for itself.
             </p>
           </motion.div>
 

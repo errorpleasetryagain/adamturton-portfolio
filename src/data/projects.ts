@@ -23,22 +23,22 @@ export const projects: Project[] = [
   {
     slug: 'good-living-co',
     title: 'Good Living Co',
-    tagline: 'Portfolio of 6 passive income content sites',
+    tagline: 'Six production websites built from scratch',
     description:
-      'A portfolio of six niche content sites built with Next.js and MDX, monetized through Awin affiliate links and email marketing via MailerLite. Each site targets a specific vertical with SEO-optimized content and conversion-focused design.',
+      'Founded and built a portfolio of six niche content websites — from architecture and design through to SEO, affiliate monetisation, and email automation. Each site targets a specific vertical with conversion-focused design and AI-assisted content workflows.',
     status: 'live',
     technologies: ['Next.js', 'MDX', 'Tailwind CSS', 'Awin', 'MailerLite', 'SEO'],
     url: 'https://maleoptimal.co.uk',
     featured: true,
     order: 1,
     problem:
-      'I wanted to build a sustainable passive income stream through content marketing, but needed a scalable approach that wouldn\'t require maintaining separate codebases for each niche site. The challenge was creating a repeatable system for launching and monetizing content sites efficiently.',
+      'I wanted to prove that the systems-thinking approach I\'d developed in technology operations could apply to building a content business. The challenge was creating a scalable architecture that would let me launch and manage multiple niche websites without maintaining separate codebases.',
     approach:
-      'Built a modular Next.js template with MDX for content management, allowing rapid deployment of new sites. Each site shares the same core architecture but with custom branding and content. Implemented affiliate link management through Awin and built email capture funnels using MailerLite. Focused on SEO from day one with semantic HTML, fast load times, and structured data.',
+      'Designed a modular Next.js template with MDX for content management, enabling rapid deployment of new sites. Each site shares core architecture but with custom branding and content strategy. Implemented affiliate monetisation through Awin, built email capture funnels via MailerLite, and integrated AI-assisted content workflows. Focused on SEO from day one with semantic HTML, structured data, and Core Web Vitals optimisation.',
     outcome:
-      'Successfully launched 6 sites: MaleOptimal.co.uk, FuelOptimal.co.uk, TradePick.co.uk, and 3 more. The system allows me to launch new niche sites in hours rather than weeks. Generating consistent affiliate revenue with minimal ongoing maintenance. The MDX-based content system makes updating and expanding content straightforward.',
+      'Launched six production sites across different verticals. The shared architecture means I can spin up a new site in hours, not weeks. Each site scores 90+ on Core Web Vitals. The project demonstrates full-stack ownership — from infrastructure and deployment through to content strategy, monetisation, and marketing automation.',
     whatIdDoDifferently:
-      'I\'d invest more in content upfront before launch—having 20-30 articles ready instead of 10. I\'d also implement more comprehensive analytics from day one to better track conversion funnels. Would consider adding a CMS layer (like Sanity or Contentful) for non-technical content updates, though MDX has worked well for my use case.',
+      'I\'d invest more in content depth before launch — 20-30 articles instead of 10. I\'d also implement more comprehensive analytics from day one to better track conversion funnels. Would consider adding a headless CMS layer for non-technical content updates, though MDX has worked well for my use case.',
     details: {
       sites: [
         'maleoptimal.co.uk',
@@ -48,7 +48,7 @@ export const projects: Project[] = [
         'techoptimal.co.uk',
         'wealthoptimal.co.uk'
       ],
-      monetization: 'Awin affiliate links, email list building via MailerLite',
+      monetization: 'Awin affiliate monetisation, MailerLite email automation',
       technicalDetails: [
         'Shared Next.js template across all 6 sites',
         'MDX for rich content with embedded components',
@@ -114,6 +114,34 @@ export const projects: Project[] = [
         'Dealer comparison and ranking system'
       ]
     }
+  },
+  {
+    slug: 'ai-workflows',
+    title: 'AI-Assisted Development Workflows',
+    tagline: 'Production AI agent pipelines and automation',
+    description:
+      'Building real workflows with AI agents — automated job scanning, content generation pipelines, multi-agent orchestration, and custom MCP server integrations. Practical AI applied to real problems, not demos.',
+    status: 'live',
+    technologies: ['Claude Code', 'MCP Servers', 'Python', 'TypeScript', 'Automation'],
+    featured: true,
+    order: 4,
+    problem:
+      'Running a portfolio of six websites, a job search, and content operations as a solo founder means there are more tasks than hours. I needed to automate repetitive workflows without sacrificing quality or losing oversight.',
+    approach:
+      'Built a suite of AI-powered workflows using Claude Code with custom MCP server integrations. Automated daily job scanning across LinkedIn and recruiter networks with scoring and filtering. Created content generation pipelines with human review checkpoints. Set up multi-agent orchestration for parallel tasks like site audits, SEO checks, and content updates.',
+    outcome:
+      'These workflows now power all my current projects. Job scanning runs daily and surfaces scored opportunities. Content pipelines handle research, drafting, and SEO optimisation with human approval gates. The approach has been a genuine force multiplier — doing the work of a small team as one person.',
+    whatIdDoDifferently:
+      'I\'d formalise the agent orchestration patterns earlier. Some of the early automation was ad-hoc and brittle. Building with structured MCP integrations from the start would have saved rework. I\'d also add better observability and logging for agent runs.',
+    details: {
+      technicalDetails: [
+        'Claude Code with custom agent configurations',
+        'MCP server integrations (Gmail, MailerLite, Vercel, Notion)',
+        'Automated job scanning with scoring algorithms',
+        'Content generation pipelines with review gates',
+        'Multi-agent parallel task orchestration',
+      ],
+    },
   },
 ];
 
