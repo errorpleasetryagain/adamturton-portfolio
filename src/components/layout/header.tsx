@@ -21,64 +21,54 @@ export default function Header() {
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
+        transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+        className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-md"
       >
-        <nav className="glass-nav flex items-center gap-1 rounded-full px-2 py-2">
+        <div className="mx-auto flex max-w-[var(--container-max)] items-center justify-between px-6 py-4">
           <Link
             href="/"
-            className="rounded-full px-4 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[rgba(255,255,255,0.06)]"
+            className="text-sm font-bold uppercase tracking-[0.15em] text-[var(--foreground)]"
           >
-            Adam Turton
+            AT
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
+                  className={`text-xs uppercase tracking-[0.15em] transition-colors ${
                     isActive
-                      ? 'font-medium text-[var(--foreground)]'
-                      : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-[rgba(255,255,255,0.06)]'
+                      ? 'text-[var(--foreground)]'
+                      : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)]'
                   }`}
                 >
                   {link.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute inset-0 rounded-full bg-[rgba(255,255,255,0.08)]"
-                      style={{ zIndex: -1 }}
-                      transition={{ type: 'spring', bounce: 0.15, duration: 0.5 }}
-                    />
-                  )}
                 </Link>
               );
             })}
             <Link
               href="/contact"
-              className="rounded-full bg-[var(--accent-primary)] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-[var(--accent-secondary)]"
+              className="border border-[var(--foreground)] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[var(--foreground)] transition-all duration-200 hover:bg-[var(--foreground)] hover:text-[var(--background)]"
             >
               Contact
             </Link>
           </div>
 
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex md:hidden items-center justify-center rounded-full p-2 text-[var(--foreground)] transition-colors hover:bg-[rgba(255,255,255,0.06)]"
+            className="flex md:hidden items-center text-[var(--foreground)]"
             aria-label="Toggle menu"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              {isOpen ? (
-                <path d="M18 6L6 18M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            <span className="text-xs uppercase tracking-[0.15em]">
+              {isOpen ? 'Close' : 'Menu'}
+            </span>
           </button>
-        </nav>
+        </div>
       </motion.header>
 
       <AnimatePresence>
@@ -88,26 +78,23 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[var(--background)]/95 backdrop-blur-xl pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 flex flex-col justify-center bg-[var(--background)] px-6 md:hidden"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="flex flex-col gap-4"
-            >
+            <div className="space-y-6">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, x: -12 }}
+                  initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-2xl font-medium ${
-                      pathname === link.href ? 'text-[var(--foreground)]' : 'text-[var(--foreground-muted)]'
+                    className={`block text-4xl font-bold uppercase tracking-tight ${
+                      pathname === link.href
+                        ? 'text-[var(--foreground)]'
+                        : 'text-[var(--foreground-muted)]'
                     }`}
                   >
                     {link.label}
@@ -115,19 +102,19 @@ export default function Header() {
                 </motion.div>
               ))}
               <motion.div
-                initial={{ opacity: 0, x: -12 }}
+                initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
               >
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="mt-8 inline-block rounded-full bg-[var(--accent-primary)] px-6 py-3 text-lg font-medium text-white"
+                  className="mt-8 inline-block border border-[var(--foreground)] px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] text-[var(--foreground)]"
                 >
-                  Get in touch
+                  Contact
                 </Link>
               </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
