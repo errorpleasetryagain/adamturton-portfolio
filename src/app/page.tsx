@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import TrustedBy from '@/components/layout/trusted-by';
 import Magnetic from '@/components/ui/magnetic';
-import RevealWords from '@/components/ui/reveal-words';
+import DecryptedText from '@/components/ui/decrypted-text';
 
 const stagger = {
   hidden: {},
@@ -45,8 +45,8 @@ export default function Home() {
           </motion.div>
 
           {/* Headline */}
-          <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl lg:text-7xl">
-            <RevealWords text="People and technology." delay={0.25} />
+          <h1 className="mb-6 font-mono text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl lg:text-7xl">
+            <DecryptedText text="People and technology." delay={400} speed={40} />
           </h1>
 
           {/* Subhead */}
@@ -82,17 +82,19 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="hidden md:block"
+          className="hidden justify-self-end md:block"
         >
-          <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+          <div className="group relative aspect-[4/5] w-[200px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] lg:w-[230px]">
             <Image
               src="/adam-portrait.jpg"
               alt="Adam Turton"
               fill
               priority
-              sizes="(max-width: 768px) 0px, 360px"
+              sizes="230px"
               className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
             />
+            {/* Subtle grain texture overlay */}
+            <div className="grain-overlay pointer-events-none absolute inset-0" />
           </div>
         </motion.div>
         </div>
@@ -214,18 +216,18 @@ export default function Home() {
                 Next.js
               </span>
               <span className="rounded-full bg-[var(--accent-green-bg)] px-3 py-1 text-xs font-medium text-[var(--accent-green-text)]">
-                90+ articles
+                Live
               </span>
             </div>
             <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
-              MaleOptimal &amp; content sites
+              MaleOptimal
             </h3>
             <p className="text-sm text-[var(--foreground-muted)]">
-              Six health and lifestyle websites I built with Next.js. I write evidence-based
-              articles, manage SEO, and handle the full stack.
+              My main content site, evidence-based men&apos;s health. I write the
+              articles, handle the SEO, and run the full stack on Next.js and MDX.
             </p>
             <Link
-              href="/projects/good-living-co"
+              href="/projects/maleoptimal"
               className="absolute inset-0"
               aria-label="View project"
             />
@@ -240,21 +242,21 @@ export default function Home() {
           >
             <div className="mb-4 flex items-center gap-3">
               <span className="rounded-full bg-[var(--accent-blue-bg)] px-3 py-1 text-xs font-medium text-[var(--accent-blue-text)]">
-                Claude Code
+                Bash
               </span>
               <span className="rounded-full bg-[var(--accent-purple-bg)] px-3 py-1 text-xs font-medium text-[var(--accent-purple-text)]">
-                MCP Servers
+                Accessibility
               </span>
             </div>
             <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
-              AI workflow automation
+              Bash Tutor
             </h3>
             <p className="text-sm text-[var(--foreground-muted)]">
-              Automated job scanning, content pipelines, and multi-agent orchestration.
-              Using AI as a practical tool, not a demo.
+              A command-line tool that helps dyslexic people learn and use bash.
+              The project I&apos;m most personally attached to.
             </p>
             <Link
-              href="/projects/ai-workflows"
+              href="/projects/bash-tutor"
               className="absolute inset-0"
               aria-label="View project"
             />
@@ -282,12 +284,24 @@ export default function Home() {
             Looking for my next senior tech ops or IT management role. London
             based, happy to work remotely.
           </p>
-          <Link
-            href="/contact"
-            className="relative inline-flex items-center rounded-full bg-[var(--foreground)] px-8 py-4 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97] hover:shadow-[var(--shadow-lg)] active:scale-[0.95]"
-          >
-            Start a conversation
-          </Link>
+          <div className="relative flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-full bg-[var(--foreground)] px-8 py-4 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97] hover:shadow-[var(--shadow-lg)] active:scale-[0.95]"
+            >
+              Start a conversation
+            </Link>
+            <a
+              href="/adam-turton-cv.pdf"
+              download="Adam_Turton_CV.pdf"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-8 py-4 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
+            >
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+              </svg>
+              Download CV
+            </a>
+          </div>
         </motion.div>
       </section>
     </div>

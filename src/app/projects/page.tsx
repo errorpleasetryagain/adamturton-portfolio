@@ -20,9 +20,9 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="text-lg leading-relaxed text-[var(--foreground-muted)]">
-          Things I&apos;ve built outside of work: content sites, a personal
-          knowledge base, an investment tool, and the AI workflows I use every
-          day. Each one taught me something different, and I&apos;ve been honest
+          Things I&apos;ve built outside of work: a few content sites I write and
+          run, and Bash Tutor, a tool to help dyslexic people use the command
+          line. Each one taught me something different, and I&apos;ve been honest
           about what I&apos;d do differently next time.
         </p>
       </motion.div>
@@ -36,9 +36,15 @@ export default function ProjectsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
-            className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 transition-shadow hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10"
+            className="spotlight-card group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 transition-shadow hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:p-10"
+            onMouseMove={(e) => {
+              const el = e.currentTarget;
+              const rect = el.getBoundingClientRect();
+              el.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+              el.style.setProperty('--my', `${e.clientY - rect.top}px`);
+            }}
           >
-            <div className="mb-6 flex flex-wrap items-center gap-3">
+            <div className="relative z-10 mb-6 flex flex-wrap items-center gap-3">
               {project.technologies.slice(0, 4).map((tech) => (
                 <span
                   key={tech}
@@ -69,18 +75,18 @@ export default function ProjectsPage() {
               </span>
             </div>
 
-            <div className="mb-4">
+            <div className="relative z-10 mb-4">
               <h2 className="mb-2 text-2xl font-medium text-[var(--foreground)] md:text-3xl">
                 {project.title}
               </h2>
               <p className="text-[var(--foreground-muted)]">{project.tagline}</p>
             </div>
 
-            <p className="mb-6 max-w-3xl text-[var(--foreground-muted)]">
+            <p className="relative z-10 mb-6 max-w-3xl text-[var(--foreground-muted)]">
               {project.description}
             </p>
 
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="relative z-10 flex flex-wrap items-center gap-6">
               <Link
                 href={`/projects/${project.slug}`}
                 className="inline-flex items-center text-sm font-medium text-[var(--foreground)] transition-colors hover:text-[var(--foreground-muted)]"

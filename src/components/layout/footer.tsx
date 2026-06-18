@@ -12,14 +12,6 @@ export default function Footer() {
 
         <div className="flex items-center gap-6">
           <Link
-            href="https://github.com/errorpleasetryagain"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-underline text-sm text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
-          >
-            GitHub
-          </Link>
-          <Link
             href="https://linkedin.com/in/adamturton"
             target="_blank"
             rel="noopener noreferrer"

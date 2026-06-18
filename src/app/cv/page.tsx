@@ -266,14 +266,6 @@ export default function CVPage() {
           >
             LinkedIn
           </a>
-          <a
-            href="https://github.com/errorpleasetryagain"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
-          >
-            GitHub
-          </a>
         </div>
       </motion.section>
     </div>

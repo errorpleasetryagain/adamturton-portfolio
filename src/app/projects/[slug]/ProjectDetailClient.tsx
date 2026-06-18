@@ -253,7 +253,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
               </svg>
             </div>
             <h2 className="text-xl font-medium text-[var(--foreground)]">
-              What I'd Do Differently
+              What I&apos;d Do Differently
             </h2>
           </div>
           <p className="leading-relaxed text-[var(--foreground-muted)]">
