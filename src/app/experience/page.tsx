@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import ScrollReveal from '@/components/ui/scroll-reveal';
 
 // Role data with outcomes-focused content
 const roles = [
@@ -289,13 +290,9 @@ export default function ExperiencePage() {
             Experience
           </h1>
 
-          <p className="max-w-[65ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-            Ten years in technology operations. I started at Apple in 2016 and
-            worked through four roles to corporate IS&amp;T, then moved into
-            multi-site retail at Selfridges and now lead a technology operations
-            team at Starling Bank. The thread through all of it is people: getting
-            the technology right, and getting the best out of the team running it.
-          </p>
+          <ScrollReveal className="max-w-[65ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
+            Ten years in technology operations. I started at Apple in 2016 and worked through four roles to corporate IS&T, then moved into multi-site retail at Selfridges and now lead a technology operations team at Starling Bank. The thread through all of it is people: getting the technology right, and getting the best out of the team running it.
+          </ScrollReveal>
         </motion.div>
       </section>
 

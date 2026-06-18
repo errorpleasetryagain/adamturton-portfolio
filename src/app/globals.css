@@ -132,6 +132,22 @@ body::before {
   }
 }
 
+/* Side rays: gentle drift of the fanned light from the top-right corner */
+.side-rays-fan {
+  animation: side-rays-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes side-rays-drift {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .side-rays-fan {
+    animation: none;
+  }
+}
+
 /* Magic-bento style spotlight card */
 .spotlight-card {
   position: relative;

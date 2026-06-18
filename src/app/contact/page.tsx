@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 export default function ContactPage() {
   return (
@@ -59,7 +58,7 @@ export default function ContactPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {/* Email Card */}
+          {/* Email: personal */}
           <motion.a
             href="mailto:adam.turton84@icloud.com"
             initial={{ opacity: 0, y: 24 }}
@@ -87,7 +86,7 @@ export default function ContactPage() {
 
           {/* LinkedIn Card */}
           <motion.a
-            href="https://linkedin.com/in/adamturton"
+            href="https://linkedin.com/in/adamjturton"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 24 }}
@@ -108,106 +107,67 @@ export default function ContactPage() {
               Connect professionally and see my full career history.
             </p>
             <span className="inline-flex items-center text-sm font-medium text-[var(--foreground)] group-hover:underline">
-              linkedin.com/in/adamturton
+              linkedin.com/in/adamjturton
               <svg className="ml-1 h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
             </span>
           </motion.a>
-        </div>
-      </section>
 
-      {/* What Happens Next */}
-      <section className="pb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="mb-10"
-        >
-          <h2 className="mb-4 text-2xl font-medium tracking-tight text-[var(--foreground)]">
-            What happens next
-          </h2>
-          <div className="h-px w-24 bg-[var(--border)]" />
-        </motion.div>
-
-        <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 md:p-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center md:text-left"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] md:mx-0">
-                <span className="text-lg font-medium text-[var(--foreground)]">1</span>
-              </div>
-              <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
-                You reach out
-              </h3>
-              <p className="text-[var(--foreground-muted)]">
-                Send an email or connect on LinkedIn. Tell me about the role or opportunity you have in mind.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-center md:text-left"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] md:mx-0">
-                <span className="text-lg font-medium text-[var(--foreground)]">2</span>
-              </div>
-              <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
-                We talk
-              </h3>
-              <p className="text-[var(--foreground-muted)]">
-                I&apos;ll get back to you quickly. We&apos;ll set up a call to talk through fit, expectations and next steps.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center md:text-left"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)] md:mx-0">
-                <span className="text-lg font-medium text-[var(--foreground)]">3</span>
-              </div>
-              <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
-                Move forward
-              </h3>
-              <p className="text-[var(--foreground-muted)]">
-                If there&apos;s mutual interest, we&apos;ll line up next steps from there.
-              </p>
-            </motion.div>
-          </div>
-
-          <motion.div
+          {/* Email: MaleOptimal */}
+          <motion.a
+            href="mailto:adam@maleoptimal.co.uk"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-[var(--border)] pt-8 md:flex-row"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 transition-all hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-[var(--foreground)]"
           >
-            <p className="text-sm text-[var(--foreground-muted)]">
-              I respond to all genuine inquiries. Looking forward to hearing from you.
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)]">
+              <svg className="h-5 w-5 text-[var(--foreground)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M22 6l-10 7L2 6" />
+              </svg>
+            </div>
+            <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
+              MaleOptimal
+            </h3>
+            <p className="mb-4 text-[var(--foreground-muted)]">
+              For anything to do with my content sites and projects.
             </p>
-            <Link
-              href="/"
-              className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
-            >
-              Back to home
-            </Link>
-          </motion.div>
+            <span className="text-sm font-medium text-[var(--foreground)] group-hover:underline">
+              adam@maleoptimal.co.uk
+            </span>
+          </motion.a>
+
+          {/* Email: Good Living Web Co */}
+          <motion.a
+            href="mailto:adam@goodlivingwebco.co.uk"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 transition-all hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-[var(--foreground)]"
+          >
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)]">
+              <svg className="h-5 w-5 text-[var(--foreground)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M22 6l-10 7L2 6" />
+              </svg>
+            </div>
+            <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
+              Good Living Web Co
+            </h3>
+            <p className="mb-4 text-[var(--foreground-muted)]">
+              My web studio. For build, design and development enquiries.
+            </p>
+            <span className="text-sm font-medium text-[var(--foreground)] group-hover:underline">
+              adam@goodlivingwebco.co.uk
+            </span>
+          </motion.a>
         </div>
       </section>
+
     </div>
   );
 }

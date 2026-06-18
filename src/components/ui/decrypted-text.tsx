@@ -25,9 +25,20 @@ export default function DecryptedText({
   speed = 38,
 }: DecryptedTextProps) {
   const [output, setOutput] = useState(text);
+  const [mounted, setMounted] = useState(false);
   const frame = useRef(0);
 
+  // Mark as mounted on the client. The first render (server + initial client)
+  // always shows the plain text, so hydration matches. Scrambling only begins
+  // after this flips true. This is a deliberate client-only gate.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const prefersReduced =
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -64,11 +75,12 @@ export default function DecryptedText({
       clearTimeout(start);
       if (interval) clearInterval(interval);
     };
-  }, [text, delay, speed]);
+  }, [mounted, text, delay, speed]);
 
+  // Before mount, render the plain text so server and client HTML match.
   return (
-    <span className={className} aria-label={text}>
-      {output}
+    <span className={className} aria-label={text} suppressHydrationWarning>
+      {mounted ? output : text}
     </span>
   );
 }

@@ -33,27 +33,37 @@ export default function AboutPage() {
             <div className="grain-overlay pointer-events-none absolute inset-0" />
           </div>
 
-          <div>
-            <ScrollReveal>
-              I&apos;m Adam. I&apos;ve spent the last ten years in technology operations, starting at Apple and working through Selfridges to Starling Bank, where I now lead the tech ops team. I keep critical systems running and fix things when they break, but the part I care about most is the people. Developing a team and watching someone get good at something they couldn&apos;t do before is the bit that actually keeps me interested.
-            </ScrollReveal>
+          <ScrollReveal>
+            {[
+              "I'm Adam. I've spent the last ten years in technology operations, starting at Apple and working through Selfridges to Starling Bank, where I now lead the tech ops team. I keep critical systems running and fix things when they break, but the part I care about most is the people. Developing a team and watching someone get good at something they couldn't do before is the bit that actually keeps me interested.",
+              "My Apple background is genuine and hands-on. I'm an Apple Certified Mac Technician, so I've done the component level repair, the diagnostics, the macOS and iOS and MDM side of things, not just managed people who do it. That depth carries through everything since.",
+              "Outside of work I build things. A few content sites in Next.js and MDX, and a lot of time spent with AI and agentic workflows. I use Claude and local models daily and build real automations with them, so when I say I'm up to date on AI I mean I'm using it, not reading about it.",
+              "Away from a screen, music is the big one. I make it and I DJ. I cook most of my own meals, I'm in the gym four days a week, and I keep a pretty healthy lifestyle in general. I'll happily disappear on a long walk, and I collect trainers, which is a habit I have made peace with.",
+              "I have ADHD, so I work best with clarity, autonomy and a bit of variety. Based in London, looking for my next senior tech ops or IT management role.",
+            ]}
+          </ScrollReveal>
 
-            <ScrollReveal>
-              My Apple background is genuine and hands-on. I&apos;m an Apple Certified Mac Technician, so I&apos;ve done the component level repair, the diagnostics, the macOS and iOS and MDM side of things, not just managed people who do it. That depth carries through everything since.
-            </ScrollReveal>
-
-            <ScrollReveal>
-              Outside of work I build things. A few content sites in Next.js and MDX, and a lot of time spent with AI and agentic workflows. I use Claude and local models daily and build real automations with them, so when I say I&apos;m up to date on AI I mean I&apos;m using it, not reading about it.
-            </ScrollReveal>
-
-            <ScrollReveal>
-              Away from a screen, music is the big one. I make it and I DJ. I cook most of my own meals, I&apos;m in the gym four days a week, and I keep a pretty healthy lifestyle in general. I&apos;ll happily disappear on a long walk, and I collect trainers, which is a habit I have made peace with.
-            </ScrollReveal>
-
-            <ScrollReveal>
-              I have ADHD, so I work best with clarity, autonomy and a bit of variety. Based in London, looking for my next senior tech ops or IT management role.
-            </ScrollReveal>
-          </div>
+          <p className="clear-both mt-8 text-base text-[var(--foreground-muted)]">
+            A couple of the sites I write and build:{' '}
+            <a
+              href="https://maleoptimal.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline text-[var(--foreground)]"
+            >
+              MaleOptimal
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://glp1guide.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline text-[var(--foreground)]"
+            >
+              GLP1 Guide
+            </a>
+            .
+          </p>
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
