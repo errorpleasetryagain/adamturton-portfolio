@@ -3,94 +3,78 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import ScrollReveal from '@/components/ui/scroll-reveal';
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-[var(--container-max)] px-6">
-      {/* Hero Section */}
+      {/* Hero Section: central portrait with text revealing around it */}
       <section className="py-24 md:py-32">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr] md:items-start md:gap-16">
-        <motion.div
+        <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl"
+          className="mb-16 text-center text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl"
         >
-          <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl">
-            About
-          </h1>
+          About
+        </motion.h1>
 
-          <div className="space-y-4 text-lg leading-relaxed text-[var(--foreground-muted)]">
-            <p>
-              I&apos;m Adam. I&apos;ve spent the last ten years in technology
-              operations, starting at Apple and working through Selfridges to
-              Starling Bank, where I now lead the tech ops team. I keep critical
-              systems running and fix things when they break, but the part I
-              care about most is the people. Developing a team and watching
-              someone get good at something they couldn&apos;t do before is the
-              bit that actually keeps me interested.
-            </p>
-            <p>
-              My Apple background is genuine and hands-on. I&apos;m an Apple
-              Certified Mac Technician, so I&apos;ve done the component level
-              repair, the diagnostics, the macOS and iOS and MDM side of things,
-              not just managed people who do it. That depth carries through
-              everything since.
-            </p>
-            <p>
-              Outside of work I build things. Six content sites in Next.js and
-              MDX, and a lot of time spent with AI and agentic workflows. I use
-              Claude and local models daily and build real automations with them,
-              so when I say I&apos;m up to date on AI I mean I&apos;m using it, not
-              reading about it.
-            </p>
-            <p>
-              Away from a screen, music is the big one. I make it and I DJ. I
-              cook most of my own meals, I&apos;m in the gym four days a week, and
-              I keep a pretty healthy lifestyle in general. I&apos;ll happily
-              disappear on a long walk, and I collect trainers, which is a habit I
-              have made peace with.
-            </p>
-            <p>
-              I have ADHD, so I work best with clarity, autonomy and a bit of
-              variety. Based in London, looking for my next senior tech ops or IT
-              management role.
-            </p>
-          </div>
+        <div className="mx-auto max-w-3xl space-y-10 text-center text-xl leading-relaxed text-[var(--foreground-muted)] md:space-y-14 md:text-2xl">
+          <ScrollReveal>
+            I&apos;m Adam. I&apos;ve spent the last ten years in technology operations, starting at Apple and working through Selfridges to Starling Bank, where I now lead the tech ops team. I keep critical systems running and fix things when they break, but the part I care about most is the people.
+          </ScrollReveal>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              href="/experience"
-              className="inline-flex items-center rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97]"
-            >
-              View experience
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-all duration-200 hover:border-[var(--foreground-muted)]"
-            >
-              Get in touch
-            </Link>
-          </div>
-        </motion.div>
+          {/* Central portrait */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="flex justify-center py-2"
+          >
+            <div className="group relative aspect-[4/5] w-[240px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] md:w-[280px]">
+              <Image
+                src="/adam-portrait.jpg"
+                alt="Adam Turton"
+                fill
+                priority
+                sizes="280px"
+                className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+              />
+              <div className="grain-overlay pointer-events-none absolute inset-0" />
+            </div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="md:sticky md:top-28"
-        >
-          <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
-            <Image
-              src="/adam-portrait.jpg"
-              alt="Adam Turton"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 360px"
-              className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
-            />
-          </div>
-        </motion.div>
+          <ScrollReveal>
+            My Apple background is genuine and hands-on. I&apos;m an Apple Certified Mac Technician, so I&apos;ve done the component level repair, the diagnostics, the macOS and iOS and MDM side of things, not just managed people who do it. That depth carries through everything since.
+          </ScrollReveal>
+
+          <ScrollReveal>
+            Outside of work I build things. A few content sites in Next.js and MDX, and a lot of time spent with AI and agentic workflows. I use Claude and local models daily and build real automations with them, so when I say I&apos;m up to date on AI I mean I&apos;m using it, not reading about it.
+          </ScrollReveal>
+
+          <ScrollReveal>
+            Away from a screen, music is the big one. I make it and I DJ. I cook most of my own meals, I&apos;m in the gym four days a week, and I keep a pretty healthy lifestyle in general. I&apos;ll happily disappear on a long walk, and I collect trainers, which is a habit I have made peace with.
+          </ScrollReveal>
+
+          <ScrollReveal>
+            I have ADHD, so I work best with clarity, autonomy and a bit of variety. Based in London, looking for my next senior tech ops or IT management role.
+          </ScrollReveal>
+        </div>
+
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/experience"
+            className="inline-flex items-center rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97]"
+          >
+            View experience
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-all duration-200 hover:border-[var(--foreground-muted)]"
+          >
+            Get in touch
+          </Link>
         </div>
       </section>
 

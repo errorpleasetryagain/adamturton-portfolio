@@ -28,26 +28,9 @@ export default function Header() {
         <nav className="flex items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-2 py-2 shadow-[var(--shadow-sm)] backdrop-blur-xl">
           <Link
             href="/"
-            className="flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
-            aria-label="Adam Turton, home"
+            className="rounded-full px-4 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
           >
-            <svg width="22" height="22" viewBox="0 0 100 100" aria-hidden="true" className="shrink-0">
-              <rect x="2" y="2" width="96" height="96" rx="24" fill="currentColor" />
-              <text
-                x="50"
-                y="54"
-                fontFamily="Helvetica, Arial, sans-serif"
-                fontSize="52"
-                fontWeight="700"
-                fill="var(--surface)"
-                textAnchor="middle"
-                dominantBaseline="central"
-                letterSpacing="-3"
-              >
-                AT
-              </text>
-            </svg>
-            <span>Adam Turton</span>
+            Adam Turton
           </Link>
 
           {/* Desktop nav */}
