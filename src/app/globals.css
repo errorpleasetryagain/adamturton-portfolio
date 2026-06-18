@@ -132,14 +132,14 @@ body::before {
   }
 }
 
-/* Side rays: gentle drift of the fanned light from the top-right corner */
+/* Side rays: slow, gentle drift of the cascading light from the top-right */
 .side-rays-fan {
-  animation: side-rays-drift 14s ease-in-out infinite alternate;
+  animation: side-rays-drift 18s ease-in-out infinite alternate;
 }
 
 @keyframes side-rays-drift {
-  from { transform: rotate(-4deg); }
-  to { transform: rotate(4deg); }
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,51 +1,55 @@
 'use client';
 
 /**
- * Soft light rays fanning out from the top-right corner, reactbits side-rays
- * style. Pure monochrome (soft white), sits fixed behind all content and is
- * non-interactive. Subtle but present, to give the page a light source.
+ * Soft volumetric light cascading from the top-right corner, in the reactbits
+ * side-rays style. Built from layered, heavily blurred light cones so the edges
+ * feather and the rays blend into a glow rather than reading as hard shapes.
+ * Monochrome (soft white), fixed behind all content, non-interactive.
  */
 export default function SideRays() {
+  // Each ray is a long, thin, blurred cone rotated out from the corner.
+  const rays = [
+    { rotate: 4, width: 200, opacity: 0.22, blur: 40 },
+    { rotate: 18, width: 260, opacity: 0.16, blur: 55 },
+    { rotate: 34, width: 320, opacity: 0.12, blur: 65 },
+    { rotate: 52, width: 380, opacity: 0.08, blur: 80 },
+    { rotate: 72, width: 440, opacity: 0.05, blur: 90 },
+  ];
+
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
-    >
-      {/* Core glow at the corner */}
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      {/* Bright corner source */}
       <div
-        className="absolute -right-32 -top-40 h-[640px] w-[640px] rounded-full"
+        className="absolute right-0 top-0 h-[420px] w-[420px] translate-x-1/4 -translate-y-1/4"
         style={{
           background:
-            'radial-gradient(circle, color-mix(in srgb, var(--foreground) 9%, transparent) 0%, transparent 65%)',
+            'radial-gradient(circle, color-mix(in srgb, var(--foreground) 16%, transparent) 0%, transparent 60%)',
+          filter: 'blur(30px)',
         }}
       />
 
-      {/* Fanned rays */}
-      <svg
-        className="side-rays-svg absolute -right-10 -top-10 h-[150vh] w-[120vw] opacity-[0.5]"
-        viewBox="0 0 1000 1000"
-        preserveAspectRatio="xMaxYMin slice"
-        fill="none"
+      {/* Cascading rays from the top-right corner */}
+      <div
+        className="side-rays-fan absolute right-0 top-0"
+        style={{ transformOrigin: 'top right' }}
       >
-        <defs>
-          <linearGradient id="rayfade" x1="1" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--foreground)" stopOpacity="0.14" />
-            <stop offset="55%" stopColor="var(--foreground)" stopOpacity="0.04" />
-            <stop offset="100%" stopColor="var(--foreground)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        <g className="side-rays-fan" style={{ transformOrigin: '1000px 0px' }}>
-          {[8, 24, 42, 62, 84].map((deg, i) => (
-            <polygon
-              key={i}
-              points="1000,0 460,1600 700,1600"
-              fill="url(#rayfade)"
-              transform={`rotate(${deg} 1000 0)`}
-              style={{ opacity: 1 - i * 0.14 }}
-            />
-          ))}
-        </g>
-      </svg>
+        {rays.map((ray, i) => (
+          <div
+            key={i}
+            className="absolute right-0 top-0 origin-top-right"
+            style={{
+              width: `${ray.width}px`,
+              height: '160vh',
+              transform: `rotate(${ray.rotate}deg)`,
+              background: `linear-gradient(to bottom, color-mix(in srgb, var(--foreground) ${Math.round(
+                ray.opacity * 100
+              )}%, transparent), transparent 70%)`,
+              filter: `blur(${ray.blur}px)`,
+              borderRadius: '50%',
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
