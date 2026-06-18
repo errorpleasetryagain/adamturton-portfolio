@@ -28,7 +28,7 @@ export default function Home() {
     <div className="mx-auto max-w-[var(--container-max)] px-6">
       {/* Hero Section */}
       <section className="min-h-[80vh] py-24 md:py-40">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1.5fr_1fr] md:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1.6fr_auto] md:gap-10 lg:gap-16">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -82,7 +82,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="hidden justify-self-end md:block"
+          className="hidden justify-self-start md:block"
         >
           <div className="group relative aspect-[4/5] w-[200px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] lg:w-[230px]">
             <Image

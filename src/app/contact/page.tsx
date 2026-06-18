@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-[var(--container-max)] px-6">
       {/* Hero Section */}
-      <section className="min-h-[60vh] py-24 md:py-32">
+      <section className="pt-28 pb-12 md:pt-36 md:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -24,25 +24,36 @@ export default function ContactPage() {
             Let&apos;s work together
           </h1>
 
-          <p className="max-w-[60ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
+          <p className="mb-8 max-w-[60ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
             I&apos;m looking for my next senior tech ops or IT management role.
             London based, happy to work remotely. If you&apos;ve got something
             that might fit, get in touch and let&apos;s talk.
           </p>
+
+          <a
+            href="/adam-turton-cv.pdf"
+            download="Adam_Turton_CV.pdf"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-7 py-3.5 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97] hover:shadow-[var(--shadow-lg)]"
+          >
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+            </svg>
+            Download CV
+          </a>
         </motion.div>
       </section>
 
       {/* Contact Methods */}
-      <section className="py-24">
+      <section className="pb-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10"
         >
           <h2 className="mb-4 text-2xl font-medium tracking-tight text-[var(--foreground)]">
-            Contact Methods
+            Contact methods
           </h2>
           <div className="h-px w-24 bg-[var(--border)]" />
         </motion.div>
@@ -107,13 +118,13 @@ export default function ContactPage() {
       </section>
 
       {/* What Happens Next */}
-      <section className="py-24">
+      <section className="pb-24">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10"
         >
           <h2 className="mb-4 text-2xl font-medium tracking-tight text-[var(--foreground)]">
             What happens next

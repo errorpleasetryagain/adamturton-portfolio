@@ -143,11 +143,11 @@ body::before {
   inset: 0;
   border-radius: inherit;
   opacity: 0;
-  transition: opacity 300ms ease;
+  transition: opacity 400ms ease;
   background: radial-gradient(
-    260px circle at var(--mx, 50%) var(--my, 50%),
-    color-mix(in srgb, var(--foreground) 9%, transparent),
-    transparent 70%
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--foreground) 3.5%, transparent),
+    transparent 72%
   );
   pointer-events: none;
   z-index: 0;

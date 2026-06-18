@@ -15,10 +15,15 @@ interface WordProps {
 }
 
 function Word({ children, progress, range }: WordProps) {
-  const opacity = useTransform(progress, range, [0.15, 1]);
+  const opacity = useTransform(progress, range, [0.12, 1]);
+  const color = useTransform(
+    progress,
+    range,
+    ['var(--foreground-muted)', 'var(--foreground)']
+  );
   return (
     <span className="relative mr-[0.25em] inline-block">
-      <motion.span style={{ opacity }}>{children}</motion.span>
+      <motion.span style={{ opacity, color }}>{children}</motion.span>
     </span>
   );
 }
@@ -32,7 +37,7 @@ export default function ScrollReveal({ children, className }: ScrollRevealProps)
   const ref = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 0.85', 'start 0.3'],
+    offset: ['start 0.9', 'end 0.55'],
   });
 
   const words = children.split(' ');

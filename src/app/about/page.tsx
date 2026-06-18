@@ -19,47 +19,41 @@ export default function AboutPage() {
           About
         </motion.h1>
 
-        <div className="mx-auto max-w-3xl space-y-10 text-center text-xl leading-relaxed text-[var(--foreground-muted)] md:space-y-14 md:text-2xl">
-          <ScrollReveal>
-            I&apos;m Adam. I&apos;ve spent the last ten years in technology operations, starting at Apple and working through Selfridges to Starling Bank, where I now lead the tech ops team. I keep critical systems running and fix things when they break, but the part I care about most is the people.
-          </ScrollReveal>
+        <div className="mx-auto max-w-3xl text-left text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl [&_p]:mb-6">
+          {/* Floated portrait: text wraps around it */}
+          <div className="group relative float-right ml-6 mb-4 aspect-[4/5] w-[150px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] sm:ml-8 sm:w-[200px] md:w-[240px]">
+            <Image
+              src="/adam-portrait.jpg"
+              alt="Adam Turton"
+              width={280}
+              height={350}
+              priority
+              className="h-full w-full object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+            />
+            <div className="grain-overlay pointer-events-none absolute inset-0" />
+          </div>
 
-          {/* Central portrait */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="flex justify-center py-2"
-          >
-            <div className="group relative aspect-[4/5] w-[240px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] md:w-[280px]">
-              <Image
-                src="/adam-portrait.jpg"
-                alt="Adam Turton"
-                fill
-                priority
-                sizes="280px"
-                className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
-              />
-              <div className="grain-overlay pointer-events-none absolute inset-0" />
-            </div>
-          </motion.div>
+          <div>
+            <ScrollReveal>
+              I&apos;m Adam. I&apos;ve spent the last ten years in technology operations, starting at Apple and working through Selfridges to Starling Bank, where I now lead the tech ops team. I keep critical systems running and fix things when they break, but the part I care about most is the people. Developing a team and watching someone get good at something they couldn&apos;t do before is the bit that actually keeps me interested.
+            </ScrollReveal>
 
-          <ScrollReveal>
-            My Apple background is genuine and hands-on. I&apos;m an Apple Certified Mac Technician, so I&apos;ve done the component level repair, the diagnostics, the macOS and iOS and MDM side of things, not just managed people who do it. That depth carries through everything since.
-          </ScrollReveal>
+            <ScrollReveal>
+              My Apple background is genuine and hands-on. I&apos;m an Apple Certified Mac Technician, so I&apos;ve done the component level repair, the diagnostics, the macOS and iOS and MDM side of things, not just managed people who do it. That depth carries through everything since.
+            </ScrollReveal>
 
-          <ScrollReveal>
-            Outside of work I build things. A few content sites in Next.js and MDX, and a lot of time spent with AI and agentic workflows. I use Claude and local models daily and build real automations with them, so when I say I&apos;m up to date on AI I mean I&apos;m using it, not reading about it.
-          </ScrollReveal>
+            <ScrollReveal>
+              Outside of work I build things. A few content sites in Next.js and MDX, and a lot of time spent with AI and agentic workflows. I use Claude and local models daily and build real automations with them, so when I say I&apos;m up to date on AI I mean I&apos;m using it, not reading about it.
+            </ScrollReveal>
 
-          <ScrollReveal>
-            Away from a screen, music is the big one. I make it and I DJ. I cook most of my own meals, I&apos;m in the gym four days a week, and I keep a pretty healthy lifestyle in general. I&apos;ll happily disappear on a long walk, and I collect trainers, which is a habit I have made peace with.
-          </ScrollReveal>
+            <ScrollReveal>
+              Away from a screen, music is the big one. I make it and I DJ. I cook most of my own meals, I&apos;m in the gym four days a week, and I keep a pretty healthy lifestyle in general. I&apos;ll happily disappear on a long walk, and I collect trainers, which is a habit I have made peace with.
+            </ScrollReveal>
 
-          <ScrollReveal>
-            I have ADHD, so I work best with clarity, autonomy and a bit of variety. Based in London, looking for my next senior tech ops or IT management role.
-          </ScrollReveal>
+            <ScrollReveal>
+              I have ADHD, so I work best with clarity, autonomy and a bit of variety. Based in London, looking for my next senior tech ops or IT management role.
+            </ScrollReveal>
+          </div>
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
