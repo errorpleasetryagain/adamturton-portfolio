@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-[var(--container-max)] px-6">
       {/* Hero Section */}
       <section className="py-24 md:py-32">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr] md:items-start md:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,23 +22,39 @@ export default function AboutPage() {
 
           <div className="space-y-4 text-lg leading-relaxed text-[var(--foreground-muted)]">
             <p>
-              I&apos;m Adam. I&apos;ve spent the last ten years in technology operations,
-              starting at Apple and working my way through Selfridges and Starling Bank.
-              I lead teams, keep systems running, and fix things when they break.
+              I&apos;m Adam. I&apos;ve spent the last ten years in technology
+              operations, starting at Apple and working through Selfridges to
+              Starling Bank, where I now lead the tech ops team. I keep critical
+              systems running and fix things when they break, but the part I
+              care about most is the people. Developing a team and watching
+              someone get good at something they couldn&apos;t do before is the
+              bit that actually keeps me interested.
             </p>
             <p>
-              Outside of work, I build websites and write about men&apos;s health. I run
-              six content sites with 90+ published articles, all built with Next.js.
-              I&apos;m interested in AI tooling and use it daily for content pipelines
-              and automation.
+              My Apple background is genuine and hands-on. I&apos;m an Apple
+              Certified Mac Technician, so I&apos;ve done the component level
+              repair, the diagnostics, the macOS and iOS and MDM side of things,
+              not just managed people who do it. That depth carries through
+              everything since.
             </p>
             <p>
-              I have ADHD and autism (level 1). I work best with clarity, autonomy,
-              and written communication. I mention it because I&apos;d rather be upfront
-              than have it be a surprise.
+              Outside of work I build things. Six content sites in Next.js and
+              MDX, and a lot of time spent with AI and agentic workflows. I use
+              Claude and local models daily and build real automations with them,
+              so when I say I&apos;m up to date on AI I mean I&apos;m using it, not
+              reading about it.
             </p>
             <p>
-              Based in the North West. Looking for my next senior IT/Tech Ops role.
+              Away from a screen, music is the big one. I make it and I DJ. I
+              cook most of my own meals, I&apos;m in the gym four days a week, and
+              I keep a pretty healthy lifestyle in general. I&apos;ll happily
+              disappear on a long walk, and I collect trainers, which is a habit I
+              have made peace with.
+            </p>
+            <p>
+              I have ADHD, so I work best with clarity, autonomy and a bit of
+              variety. Based in London, looking for my next senior tech ops or IT
+              management role.
             </p>
           </div>
 
@@ -55,6 +73,25 @@ export default function AboutPage() {
             </Link>
           </div>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="md:sticky md:top-28"
+        >
+          <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+            <Image
+              src="/adam-portrait.jpg"
+              alt="Adam Turton"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 360px"
+              className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+            />
+          </div>
+        </motion.div>
+        </div>
       </section>
 
       {/* Career Timeline */}
@@ -74,28 +111,22 @@ export default function AboutPage() {
         <div className="space-y-0">
           {[
             {
-              period: '2025',
+              period: '2023 \u2013 Present',
               title: 'Technology Operations Manager',
               company: 'Starling Bank',
-              detail: 'Leading the tech ops department. 15-person team supporting 800+ employees across critical banking infrastructure.',
-            },
-            {
-              period: '2023 \u2013 2025',
-              title: 'Technology Operations Team Lead',
-              company: 'Starling Bank',
-              detail: 'Directed daily operations, reduced incident resolution times by 40%, consolidated vendor contracts saving \u00A3250K.',
+              detail: 'Leading the tech ops team, 11 direct reports and 23 in total, across multiple UK offices. Incident response, vendor management, and an international onboarding programme built with the People and Facilities teams.',
             },
             {
               period: '2022 \u2013 2023',
               title: 'Regional In-Store Technology Manager',
               company: 'Selfridges',
-              detail: 'Managed technology operations across five stores. Led a team of six engineers. Maintained zero POS downtime through Black Friday and Boxing Day.',
+              detail: 'Ran in-store technology across the North region with a team of six engineers. POS, networking and AV through peak trading and premium brand events.',
             },
             {
               period: '2021 \u2013 2022',
               title: 'IS&T Retail Store Operations',
               company: 'Apple',
-              detail: 'Moved from retail to Apple\u2019s corporate IS&T team. Supported global store technologies: networks, POS systems, back-of-house infrastructure across 500+ stores.',
+              detail: 'Moved from retail into Apple\u2019s corporate IS&T team. Supported store technologies: networks, POS systems and back of house infrastructure across the estate.',
             },
             {
               period: '2019 \u2013 2022',
@@ -183,11 +214,13 @@ export default function AboutPage() {
             className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8"
           >
             <h3 className="mb-3 font-medium text-[var(--foreground)]">
-              AI and automation
+              AI, music and building
             </h3>
             <p className="text-sm leading-relaxed text-[var(--foreground-muted)]">
-              I use Claude Code, MCP servers, and custom agent workflows daily.
-              Automated job scanning, content pipelines, site deployments, and email management.
+              I use Claude, MCP servers and custom agent workflows daily for job
+              scanning, content pipelines, deployments and email. When I&apos;m
+              not building automations I&apos;m usually in Logic Pro, making
+              something.
             </p>
           </motion.div>
         </div>

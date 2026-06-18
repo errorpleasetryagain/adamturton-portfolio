@@ -6,27 +6,27 @@ import { Download } from '@phosphor-icons/react';
 export default function CVPage() {
   const highlights = [
     {
-      category: 'Leadership',
+      category: 'People leadership',
       items: [
-        'Led infrastructure teams of 8-12 engineers',
-        'Reduced incident response time by 60%',
-        'Implemented 24/7 on-call rotation with 99.9% uptime',
+        'Lead a technology operations team of 11 direct reports, 23 in total',
+        'Designed and ran an international onboarding programme across time zones and offices',
+        'Mentored and developed Apple technicians and specialists into stronger engineers',
       ],
     },
     {
-      category: 'Technical',
+      category: 'Technical depth',
       items: [
-        'Architected cloud migration saving £200k/year',
-        'Built monitoring systems processing 10M+ events/day',
-        'Automated deployment pipelines reducing release time from hours to minutes',
+        'Apple Certified Mac Technician with hands-on hardware and software repair',
+        'macOS, iOS, MDM and Jamf across fleets of devices',
+        'Identity, networking, POS and access systems in live retail and banking environments',
       ],
     },
     {
-      category: 'Business Impact',
+      category: 'How I work',
       items: [
-        'Delivered PCI-DSS compliance for payment processing',
-        'Reduced infrastructure costs by 35% through optimisation',
-        'Enabled scale from 100k to 2M+ customers',
+        'Bridge technical and non technical teams so people actually understand each other',
+        'Build processes that hold up under pressure, then keep improving them',
+        'Use AI and agentic workflows daily, not as a buzzword but as real tooling',
       ],
     },
   ];
@@ -51,9 +51,9 @@ export default function CVPage() {
         </h1>
 
         <p className="mb-8 max-w-[65ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-          Technology Operations Manager with 10+ years experience building resilient 
-          infrastructure, leading high-performing teams, and delivering critical systems 
-          at scale.
+          Technology operations manager with ten years across Apple, Selfridges
+          and Starling Bank. I lead teams, keep critical systems running, and I
+          am at my best when I am developing the people around me.
         </p>
 
         {/* Download Button */}
@@ -63,11 +63,11 @@ export default function CVPage() {
           className="inline-flex items-center gap-3 rounded-full bg-[var(--foreground)] px-8 py-4 text-sm font-medium text-[var(--background)] transition-all hover:scale-[0.98] hover:shadow-lg"
         >
           <Download className="h-5 w-5" />
-          Download CV (PDF, 2 pages)
+          Download CV (PDF)
         </a>
 
         <p className="mt-4 text-sm text-[var(--foreground-muted)]">
-          Updated March 2025 · Compatible with all devices
+          Based in London. Open to remote.
         </p>
       </motion.section>
 
@@ -80,7 +80,7 @@ export default function CVPage() {
         className="mb-16"
       >
         <h2 className="mb-8 text-2xl font-medium tracking-tight text-[var(--foreground)]">
-          Key Highlights
+          What I bring
         </h2>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -121,7 +121,7 @@ export default function CVPage() {
         className="mb-16"
       >
         <h2 className="mb-8 text-2xl font-medium tracking-tight text-[var(--foreground)]">
-          Recent Experience
+          Recent experience
         </h2>
 
         <div className="space-y-6">
@@ -129,21 +129,31 @@ export default function CVPage() {
             {
               role: 'Technology Operations Manager',
               company: 'Starling Bank',
-              period: '2021 — 2024',
+              period: '2023 — Present',
               achievements: [
-                'Led platform reliability initiatives for digital banking infrastructure',
-                'Managed incident response and post-incident review processes',
-                'Implemented SRE practices reducing MTTR by 45%',
+                'Lead the technology operations team, 11 direct reports and 23 in total, supporting staff across multiple UK offices',
+                'Designed and ran an international onboarding programme, working closely with the People and Facilities teams across time zones',
+                'Manage incident response, vendor relationships and the day to day infrastructure that keeps a digital bank running',
               ],
             },
             {
-              role: 'Senior Infrastructure Engineer',
-              company: 'Previous Company',
-              period: '2018 — 2021',
+              role: 'Regional In-Store Technology Manager',
+              company: 'Selfridges',
+              period: '2022 — 2023',
               achievements: [
-                'Architected multi-region AWS infrastructure',
-                'Built CI/CD pipelines serving 200+ developers',
-                'Led cloud migration reducing costs by 35%',
+                'Ran in-store technology across the North region with a team of six engineers',
+                'Looked after POS, networking and AV through some of the busiest trading periods of the year',
+                'Supported premium brand events and VIP experiences where the technology simply had to work',
+              ],
+            },
+            {
+              role: 'IS&T Retail Store Operations and Genius',
+              company: 'Apple',
+              period: '2016 — 2022',
+              achievements: [
+                'Started as a Specialist and progressed through Technical Expert and Genius to corporate IS&T over six years',
+                'ACMT certified, doing component level Mac repair and iOS diagnostics, then supporting store technology across the estate',
+                'Trained and mentored technical experts and specialists, which is where I found I most enjoyed the work',
               ],
             },
           ].map((job, index) => (
@@ -181,7 +191,7 @@ export default function CVPage() {
         </div>
 
         <p className="mt-8 text-sm text-[var(--foreground-muted)]">
-          See the full CV for complete work history, education, and certifications.
+          See the full experience page for the complete history, role by role.
         </p>
       </motion.section>
 
@@ -194,23 +204,23 @@ export default function CVPage() {
         className="mb-16"
       >
         <h2 className="mb-8 text-2xl font-medium tracking-tight text-[var(--foreground)]">
-          Core Competencies
+          Skills and qualifications
         </h2>
 
         <div className="flex flex-wrap gap-3">
           {[
-            'Cloud Infrastructure (AWS, GCP)',
-            'Kubernetes & Container Orchestration',
-            'Infrastructure as Code (Terraform, CloudFormation)',
-            'CI/CD & DevOps Practices',
-            'Site Reliability Engineering (SRE)',
-            'Incident Management & Response',
-            'Team Leadership & Mentoring',
-            'Budget Management & Cost Optimisation',
-            'Security & Compliance (PCI-DSS, SOC2)',
-            'Monitoring & Observability',
-            'Python, Go, Bash',
-            'Agile & ITIL Frameworks',
+            'People leadership and team development',
+            'Technology operations management',
+            'Incident response and problem solving',
+            'Vendor and supplier management',
+            'Apple ecosystem (macOS, iOS, MDM, Jamf)',
+            'Identity and access (Okta, 1Password)',
+            'Networking (Cisco Meraki)',
+            'Retail POS and AV systems',
+            'Bridging technical and non technical teams',
+            'AI and agentic workflows',
+            'ILM Level 3 in Leadership and Management',
+            'FdA Business and Management',
           ].map((skill, index) => (
             <motion.span
               key={skill}
@@ -235,11 +245,11 @@ export default function CVPage() {
         className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 md:p-12"
       >
         <h2 className="mb-4 text-2xl font-medium text-[var(--foreground)]">
-          Interested in working together?
+          Want to talk?
         </h2>
         <p className="mb-6 max-w-[60ch] text-[var(--foreground-muted)]">
-          I'm currently available for senior Technology Operations, Infrastructure, 
-          or SRE leadership roles. Remote or UK-based preferred.
+          I am looking for my next senior technology operations or IT management
+          role. London based, happy to work remotely.
         </p>
         <div className="flex flex-wrap gap-4">
           <a
@@ -257,7 +267,7 @@ export default function CVPage() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/adamturton"
+            href="https://github.com/errorpleasetryagain"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"

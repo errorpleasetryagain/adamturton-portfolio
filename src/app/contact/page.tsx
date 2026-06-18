@@ -25,8 +25,9 @@ export default function ContactPage() {
           </h1>
 
           <p className="max-w-[60ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-            Currently looking for senior IT/Tech Ops roles. 
-            Remote or UK-based. Reach out and let's start a conversation.
+            I&apos;m looking for my next senior tech ops or IT management role.
+            London based, happy to work remotely. If you&apos;ve got something
+            that might fit, get in touch and let&apos;s talk.
           </p>
         </motion.div>
       </section>

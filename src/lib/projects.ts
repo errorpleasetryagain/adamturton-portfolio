@@ -43,16 +43,6 @@ export const projects: Project[] = [
     featured: true,
     order: 3,
   },
-  {
-    slug: 'employment-tribunal',
-    title: 'Employment Tribunal Case',
-    summary: 'Disability discrimination and whistleblowing case with strong medical evidence',
-    description: 'An ongoing employment tribunal case involving disability discrimination (ADHD), failure to make reasonable adjustments, and protected disclosures. Features comprehensive medical evidence linking ADHD symptoms to workplace performance concerns.',
-    tags: ['Disability Discrimination', 'Whistleblowing', 'ADHD Advocacy', 'Employment Law'],
-    status: 'case-study',
-    featured: true,
-    order: 4,
-  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

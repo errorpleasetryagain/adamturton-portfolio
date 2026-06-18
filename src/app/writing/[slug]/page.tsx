@@ -71,8 +71,13 @@ export default async function WritingPostPage({ params }: PageProps) {
       <header className="mb-12 max-w-3xl">
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <span className="rounded-full bg-[var(--accent-blue-bg)] px-3 py-1 text-xs font-medium text-[var(--accent-blue-text)]">
-            {post.category}
+            {post.type === 'link' ? 'Worth reading' : post.category}
           </span>
+          {post.type === 'link' && post.source && (
+            <span className="text-xs font-medium uppercase tracking-wider text-[var(--foreground-muted)]">
+              {post.source}
+            </span>
+          )}
           <span className="text-sm text-[var(--foreground-muted)]">
             {post.date}
           </span>
@@ -80,6 +85,19 @@ export default async function WritingPostPage({ params }: PageProps) {
         <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl">
           {post.title}
         </h1>
+        {post.type === 'link' && post.url && (
+          <a
+            href={post.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-5 py-2.5 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
+          >
+            Read the original
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </a>
+        )}
       </header>
 
       {/* Content - render MDX directly */}

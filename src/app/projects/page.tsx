@@ -20,9 +20,10 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="text-lg leading-relaxed text-[var(--foreground-muted)]">
-          A collection of work spanning passive income sites, investment tools, 
-          knowledge management systems, and advocacy. Each project represents a 
-          different facet of my skills and interests.
+          Things I&apos;ve built outside of work: content sites, a personal
+          knowledge base, an investment tool, and the AI workflows I use every
+          day. Each one taught me something different, and I&apos;ve been honest
+          about what I&apos;d do differently next time.
         </p>
       </motion.div>
 
@@ -143,7 +144,7 @@ export default function ProjectsPage() {
           Interested in working together?
         </h2>
         <p className="mx-auto mb-8 max-w-[50ch] text-[var(--foreground-muted)]">
-          Currently looking for senior IT/Tech Ops roles. Remote or UK-based.
+          Looking for my next senior tech ops or IT management role. London based, happy to work remotely.
         </p>
         <Link
           href="/contact"

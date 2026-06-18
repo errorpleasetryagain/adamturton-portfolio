@@ -18,17 +18,17 @@
   --border: #E8E6E1;
   --border-light: rgba(0, 0, 0, 0.06);
 
-  /* Accents (desaturated pastels for tags/badges only) */
-  --accent-blue-bg: #E1F3FE;
-  --accent-blue-text: #1F6C9F;
-  --accent-green-bg: #EDF3EC;
-  --accent-green-text: #346538;
-  --accent-red-bg: #FDEBEC;
-  --accent-red-text: #9F2F2D;
-  --accent-yellow-bg: #FBF3DB;
-  --accent-yellow-text: #956400;
-  --accent-purple-bg: #F3E8FF;
-  --accent-purple-text: #6B21A8;
+  /* Accents — pure monochrome. All tags/badges render as neutral grey chips. */
+  --accent-blue-bg: #EDEDEA;
+  --accent-blue-text: #3A3A38;
+  --accent-green-bg: #EDEDEA;
+  --accent-green-text: #3A3A38;
+  --accent-red-bg: #EDEDEA;
+  --accent-red-text: #3A3A38;
+  --accent-yellow-bg: #EDEDEA;
+  --accent-yellow-text: #3A3A38;
+  --accent-purple-bg: #EDEDEA;
+  --accent-purple-text: #3A3A38;
 
   /* Typography */
   --font-sans: 'Geist', 'SF Pro Display', 'Helvetica Neue', system-ui, sans-serif;
@@ -121,14 +121,14 @@ body::before {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #346538;
+  background: var(--foreground);
   margin-right: 8px;
   animation: breathe 3s ease-in-out infinite;
 }
 
 @media (prefers-color-scheme: dark) {
   .badge-breathe::before {
-    background: #6ee77a;
+    background: var(--foreground);
   }
 }
 

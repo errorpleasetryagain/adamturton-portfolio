@@ -9,6 +9,12 @@ export interface PostMetadata {
   date: string;
   category: string;
   excerpt: string;
+  /** 'post' for Adam's own writing, 'link' for a 'worth reading' share. */
+  type: 'post' | 'link';
+  /** External source URL, used when type is 'link'. */
+  url?: string;
+  /** Who or where the link is from, e.g. 'Simon Sinek'. */
+  source?: string;
 }
 
 export function getAllPosts(): PostMetadata[] {
@@ -42,7 +48,10 @@ export function getAllPosts(): PostMetadata[] {
       date: frontmatter.date || '',
       category: frontmatter.category || 'General',
       excerpt: frontmatter.excerpt || '',
-    };
+      type: frontmatter.type === 'link' ? 'link' : 'post',
+      url: frontmatter.url || undefined,
+      source: frontmatter.source || undefined,
+    } as PostMetadata;
   });
 
   return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

@@ -9,29 +9,29 @@ const roles = [
     id: 'starling',
     title: 'Technology Operations Manager',
     company: 'Starling Bank',
-    period: 'Apr 2025 — Present',
-    location: 'London, UK (Hybrid)',
+    period: '2023 — Present',
+    location: 'London, UK',
     type: 'Fintech / Digital Banking',
     outcomes: [
       {
-        metric: '99.95% uptime',
-        description: 'Maintained critical banking infrastructure across 3 office locations',
-        icon: 'uptime',
-      },
-      {
-        metric: '40% faster resolution',
-        description: 'Reduced mean time to resolution by streamlining incident response workflows',
-        icon: 'speed',
-      },
-      {
-        metric: '15-person team',
-        description: 'Led service desk analysts and technicians supporting 800+ employees',
+        metric: '11 direct, 23 total',
+        description: 'Lead the technology operations team supporting staff across multiple UK offices',
         icon: 'team',
       },
       {
-        metric: '£250K saved',
-        description: 'Consolidated vendor contracts and eliminated redundant tooling',
-        icon: 'money',
+        metric: 'International onboarding',
+        description: 'Designed and ran an onboarding programme across time zones, working closely with the People and Facilities teams',
+        icon: 'users',
+      },
+      {
+        metric: 'Incident response',
+        description: 'Own the response process and the day to day infrastructure that keeps a digital bank running',
+        icon: 'shield',
+      },
+      {
+        metric: 'Vendor management',
+        description: 'Manage supplier relationships and the tooling the business runs on',
+        icon: 'chart',
       },
     ],
     systems: ['Okta', 'Jira', '1Password', 'Google Workspace', 'Cisco Meraki', 'CrowdStrike', 'Brivo', 'DocuSign', 'BambooHR'],
@@ -42,32 +42,32 @@ const roles = [
     id: 'selfridges',
     title: 'Regional In-Store Technology Manager',
     company: 'Selfridges',
-    period: 'Jan 2022 — Apr 2025',
-    location: 'North of England',
+    period: '2022 — 2023',
+    location: 'North region',
     type: 'Retail / Luxury',
     outcomes: [
       {
-        metric: '5 stores',
-        description: 'Managed POS systems and infrastructure across Manchester, Trafford, Leeds, Birmingham, Oxford',
+        metric: 'Multi-site, North region',
+        description: 'Ran in-store technology across the North region of a premium retailer',
         icon: 'store',
       },
       {
-        metric: 'Zero downtime',
-        description: 'Maintained 100% POS availability during Black Friday and Boxing Day sales',
+        metric: 'Team of six engineers',
+        description: 'Led a team of six, coordinating work across stores and shift patterns',
+        icon: 'team',
+      },
+      {
+        metric: 'Peak trading',
+        description: 'Kept POS, networking and AV running through the busiest trading periods of the year',
         icon: 'shield',
       },
       {
-        metric: '30% reduction',
-        description: 'Cut hardware replacement costs through predictive maintenance programme',
-        icon: 'chart',
-      },
-      {
-        metric: '50+ staff',
-        description: 'Coordinated training for retail staff on new POS and payment systems',
+        metric: 'Brand events and VIP',
+        description: 'Supported premium brand events and VIP experiences where the technology simply had to work',
         icon: 'users',
       },
     ],
-    systems: ['POS Systems', 'Payment Terminals', 'Cisco Networking', 'Digital Signage', 'Inventory Management'],
+    systems: ['POS Systems', 'Payment Terminals', 'Cisco Networking', 'Digital Signage', 'AV Systems'],
     link: 'https://www.selfridges.com',
     linkLabel: 'selfridges.com',
   },
@@ -80,18 +80,18 @@ const roles = [
     type: 'Technology / Corporate',
     outcomes: [
       {
-        metric: '500+ stores',
-        description: 'Supported global store technologies: networks, POS systems, and back-of-house infrastructure',
+        metric: 'Store technology estate',
+        description: 'Supported store technologies across the estate: networks, POS systems and back of house infrastructure',
         icon: 'store',
       },
       {
-        metric: 'Production support',
-        description: 'Configured networks and resolved issues remotely, ensuring minimal downtime across the retail estate',
+        metric: 'Remote operations',
+        description: 'Configured networks and resolved issues remotely to keep stores trading',
         icon: 'shield',
       },
       {
         metric: 'Retail to corporate',
-        description: 'Moved from Apple retail into the IS&T engineering team that builds and operates global store systems',
+        description: 'Moved from Apple retail into the IS&T team that builds and operates store systems',
         icon: 'chart',
       },
     ],
@@ -113,18 +113,13 @@ const roles = [
         icon: 'trophy',
       },
       {
-        metric: '200+ tickets/month',
-        description: 'Diagnosed and repaired Mac, iPhone, iPad hardware using Apple Service Toolkit (AST 2) and GSX',
+        metric: 'Hardware and iOS repair',
+        description: 'Diagnosed and repaired Mac, iPhone and iPad hardware using Apple Service Toolkit (AST 2) and GSX',
         icon: 'ticket',
       },
       {
-        metric: '98% CSAT',
-        description: 'Consistently highest customer satisfaction scores in the region',
-        icon: 'star',
-      },
-      {
-        metric: 'Mentored 8 technicians',
-        description: 'Trained technical experts and specialists on diagnostic procedures and repair workflows',
+        metric: 'Mentoring',
+        description: 'Trained technical experts and specialists on diagnostics and repair, which is where I most enjoyed the work',
         icon: 'mentor',
       },
     ],
@@ -169,18 +164,18 @@ const roles = [
     type: 'Technology / Retail',
     outcomes: [
       {
-        metric: 'Top 10% performer',
-        description: 'Recognised for product knowledge and customer engagement across Mac, iPad, and iPhone',
+        metric: 'Product knowledge',
+        description: 'Built deep, genuine knowledge of the Apple range across Mac, iPad and iPhone',
         icon: 'trophy',
       },
       {
-        metric: 'Consultative selling',
+        metric: 'Consultative approach',
         description: 'Needs-based customer conversations using Apple\'s methodology, not traditional sales pressure',
         icon: 'heart',
       },
       {
         metric: 'Launch events',
-        description: 'Managed customer flow during iPhone X launch and other high-volume product launches',
+        description: 'Worked the floor during major product launches, keeping things calm when it was busy',
         icon: 'users',
       },
     ],
@@ -295,9 +290,11 @@ export default function ExperiencePage() {
           </h1>
 
           <p className="max-w-[65ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-            Ten years in technology operations. Started at Apple in 2016,
-            progressed through four roles to corporate IS&amp;T, then moved into
-            multi-site retail management at Selfridges and fintech at Starling Bank.
+            Ten years in technology operations. I started at Apple in 2016 and
+            worked through four roles to corporate IS&amp;T, then moved into
+            multi-site retail at Selfridges and now lead a technology operations
+            team at Starling Bank. The thread through all of it is people: getting
+            the technology right, and getting the best out of the team running it.
           </p>
         </motion.div>
       </section>
@@ -410,40 +407,40 @@ export default function ExperiencePage() {
           className="mb-12"
         >
           <h2 className="text-2xl font-medium tracking-tight text-[var(--foreground)]">
-            Core Capabilities
+            What I am good at
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              title: 'Infrastructure & Operations',
-              items: ['ITIL Service Management', 'Incident Response', 'Change Management', 'Vendor Management', 'Budget Planning'],
-              color: 'blue',
-            },
-            {
-              title: 'Team Leadership',
-              items: ['Performance Management', 'Hiring & Onboarding', 'Working across teams', 'Mentoring', 'Clear communication up and down'],
+              title: 'People leadership',
+              items: ['Developing and mentoring people', 'Hiring and onboarding', 'Performance management', 'Leading multi-site teams', 'Clear communication up and down'],
               color: 'green',
             },
             {
-              title: 'Technical Stack',
-              items: ['Okta / Identity', 'Cisco Meraki', 'Google Workspace', 'Jira / Confluence', 'CrowdStrike', 'macOS / iOS'],
-              color: 'yellow',
-            },
-            {
-              title: 'Retail Technology',
-              items: ['POS Systems', 'Payment Processing', 'Inventory Management', 'Digital Signage', 'Customer Experience'],
-              color: 'red',
-            },
-            {
-              title: 'Security & Compliance',
-              items: ['Access Control (Brivo)', 'Endpoint Protection', 'Data Privacy', 'Audit Preparation', 'Policy Development'],
+              title: 'Operations & service',
+              items: ['Incident response', 'Vendor and supplier management', 'Process definition and improvement', 'Reporting to senior leadership', 'Keeping critical systems running'],
               color: 'blue',
             },
             {
-              title: 'Automation & Tools',
-              items: ['Jamf MDM', 'DocuSign', 'BambooHR', 'Scripting', 'Process Optimisation', 'Reporting & Analytics'],
+              title: 'Apple ecosystem',
+              items: ['macOS and iOS', 'Jamf and MDM', 'Apple Business Manager', 'Component level hardware repair (ACMT)', 'Apple AV and retail systems'],
+              color: 'yellow',
+            },
+            {
+              title: 'Identity & infrastructure',
+              items: ['Okta and identity', 'Cisco Meraki networking', 'Google Workspace', '1Password and CrowdStrike', 'Brivo access control'],
+              color: 'blue',
+            },
+            {
+              title: 'Retail technology',
+              items: ['POS systems', 'Payment terminals', 'Digital signage', 'In-store AV', 'Peak trading support'],
+              color: 'red',
+            },
+            {
+              title: 'AI & building',
+              items: ['Claude and agentic workflows', 'Next.js and MDX websites', 'Automating repetitive work', 'Music production in Logic Pro', 'Genuinely up to date, hands-on'],
               color: 'green',
             },
           ].map((category, index) => {
@@ -495,7 +492,8 @@ export default function ExperiencePage() {
             Get in touch
           </h2>
           <p className="mx-auto mb-8 max-w-[50ch] text-[var(--foreground-muted)]">
-            Looking for senior IT/Tech Ops roles. Remote or UK-based.
+            Looking for my next senior technology operations or IT management role.
+            London based, happy to work remotely.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

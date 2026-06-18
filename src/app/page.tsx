@@ -2,7 +2,10 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import TrustedBy from '@/components/layout/trusted-by';
+import Magnetic from '@/components/ui/magnetic';
+import RevealWords from '@/components/ui/reveal-words';
 
 const stagger = {
   hidden: {},
@@ -25,6 +28,7 @@ export default function Home() {
     <div className="mx-auto max-w-[var(--container-max)] px-6">
       {/* Hero Section */}
       <section className="min-h-[80vh] py-24 md:py-40">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1.5fr_1fr] md:gap-16">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -41,31 +45,30 @@ export default function Home() {
           </motion.div>
 
           {/* Headline */}
-          <motion.h1
-            variants={fadeUp}
-            className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl lg:text-7xl"
-          >
-            Tech ops and writing.
-          </motion.h1>
+          <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl lg:text-7xl">
+            <RevealWords text="People and technology." delay={0.25} />
+          </h1>
 
           {/* Subhead */}
           <motion.p
             variants={fadeUp}
-            className="mb-8 max-w-[65ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl"
+            className="mb-8 max-w-[55ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl"
           >
             I lead technology operations teams. Most recently at Starling Bank,
-            before that at Selfridges and Apple. I also write about men&apos;s health
-            and build websites in my spare time.
+            before that at Selfridges and Apple. I keep things running, and I am
+            at my best developing the people who run them.
           </motion.p>
 
           {/* CTAs */}
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/experience"
-              className="inline-flex items-center rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97] hover:shadow-[var(--shadow-lg)] active:scale-[0.95]"
-            >
-              View experience
-            </Link>
+            <Magnetic strength={0.35}>
+              <Link
+                href="/experience"
+                className="inline-flex items-center rounded-full bg-[var(--foreground)] px-6 py-3 text-sm font-medium text-[var(--background)] transition-shadow duration-200 hover:shadow-[var(--shadow-lg)]"
+              >
+                View experience
+              </Link>
+            </Magnetic>
             <Link
               href="/writing"
               className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-all duration-200 hover:border-[var(--foreground-muted)] hover:shadow-[var(--shadow-sm)]"
@@ -74,6 +77,25 @@ export default function Home() {
             </Link>
           </motion.div>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="hidden md:block"
+        >
+          <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+            <Image
+              src="/adam-portrait.jpg"
+              alt="Adam Turton"
+              fill
+              priority
+              sizes="(max-width: 768px) 0px, 360px"
+              className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+            />
+          </div>
+        </motion.div>
+        </div>
       </section>
 
       {/* Where I've Worked */}
@@ -257,7 +279,8 @@ export default function Home() {
             Get in touch
           </h2>
           <p className="relative mx-auto mb-8 max-w-[50ch] text-[var(--foreground-muted)]">
-            Looking for senior IT/Tech Ops roles, remote or UK-based.
+            Looking for my next senior tech ops or IT management role. London
+            based, happy to work remotely.
           </p>
           <Link
             href="/contact"
