@@ -82,15 +82,15 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="hidden justify-self-start md:block"
+          className="order-first flex justify-center md:order-none md:justify-self-start"
         >
-          <div className="group relative aspect-[4/5] w-[200px] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] lg:w-[230px]">
+          <div className="group relative aspect-[4/5] w-[200px] shrink-0 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] sm:w-[230px]">
             <Image
               src="/adam-portrait.jpg"
               alt="Adam Turton"
               fill
               priority
-              sizes="230px"
+              sizes="(max-width: 768px) 230px, 230px"
               className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
             />
             {/* Subtle grain texture overlay */}

@@ -9,7 +9,7 @@ interface WritingCardsProps {
 
 export default function WritingCards({ posts }: WritingCardsProps) {
   return (
-    <div className="grid grid-cols-1 gap-8">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {posts.map((post) => {
         const isLink = post.type === 'link';
         return (

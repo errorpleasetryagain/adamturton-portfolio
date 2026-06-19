@@ -1,66 +1,45 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import ReflectiveCard from '@/components/ui/reflective-card';
 
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-[var(--container-max)] px-6">
       {/* Hero Section */}
       <section className="pt-28 pb-12 md:pt-36 md:pb-16">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1.5fr_auto] md:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl"
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-3xl"
+        >
+          <div className="mb-6 inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
+              Get in touch
+            </span>
+          </div>
+
+          <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl lg:text-6xl">
+            Let&apos;s work together
+          </h1>
+
+          <p className="mb-8 max-w-[60ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
+            I&apos;m looking for my next senior tech ops or IT management role.
+            London based, happy to work remotely. If you&apos;ve got something
+            that might fit, get in touch and let&apos;s talk.
+          </p>
+
+          <a
+            href="/adam-turton-cv.pdf"
+            download="Adam_Turton_CV.pdf"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-7 py-3.5 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97] hover:shadow-[var(--shadow-lg)]"
           >
-            <div className="mb-6 inline-flex items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-                Get in touch
-              </span>
-            </div>
-
-            <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl lg:text-6xl">
-              Let&apos;s work together
-            </h1>
-
-            <p className="mb-8 max-w-[60ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-              I&apos;m looking for my next senior tech ops or IT management role.
-              London based, happy to work remotely. If you&apos;ve got something
-              that might fit, get in touch and let&apos;s talk.
-            </p>
-
-            <a
-              href="/adam-turton-cv.pdf"
-              download="Adam_Turton_CV.pdf"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--foreground)] px-7 py-3.5 text-sm font-medium text-[var(--background)] transition-all duration-200 hover:scale-[0.97] hover:shadow-[var(--shadow-lg)]"
-            >
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
-              </svg>
-              Download CV
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden md:block"
-          >
-            <ReflectiveCard className="aspect-[4/5] w-[230px] rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)]">
-              <Image
-                src="/adam-portrait.jpg"
-                alt="Adam Turton"
-                fill
-                sizes="230px"
-                className="object-cover grayscale"
-              />
-            </ReflectiveCard>
-          </motion.div>
-        </div>
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+            </svg>
+            Download CV
+          </a>
+        </motion.div>
       </section>
 
       {/* Contact Methods */}
