@@ -9,7 +9,7 @@ export default async function WritingPage() {
       {/* Header */}
       <div className="mb-16 max-w-3xl">
         <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl">
-          Writing
+          Blog
         </h1>
         <p className="text-lg leading-relaxed text-[var(--foreground-muted)]">
           Notes on technology operations, leadership and the things I&apos;m

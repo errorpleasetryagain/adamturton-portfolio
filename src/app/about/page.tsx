@@ -16,7 +16,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16 text-center text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl"
         >
-          About
+          Hello.
         </motion.h1>
 
         <div className="mx-auto max-w-3xl text-left text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl [&_p]:mb-6">

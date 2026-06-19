@@ -73,7 +73,7 @@ export default function Home() {
               href="/writing"
               className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-all duration-200 hover:border-[var(--foreground-muted)] hover:shadow-[var(--shadow-sm)]"
             >
-              Read my writing
+              Read the blog
             </Link>
           </motion.div>
         </motion.div>
@@ -113,7 +113,7 @@ export default function Home() {
           className="mb-12 flex items-center justify-between"
         >
           <h2 className="text-2xl font-medium tracking-tight text-[var(--foreground)]">
-            Writing
+            Blog
           </h2>
           <Link
             href="/writing"
