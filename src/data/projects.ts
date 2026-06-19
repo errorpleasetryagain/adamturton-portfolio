@@ -57,7 +57,7 @@ export const projects: Project[] = [
       'A content site that breaks down GLP-1 medications in plain English. Same Next.js and MDX foundation as my other sites, with its own branding and focus.',
     status: 'live',
     technologies: ['Next.js', 'MDX', 'Tailwind CSS', 'SEO'],
-    url: 'https://glp1guide.co.uk',
+    url: 'https://glp1guide.co',
     featured: true,
     order: 2,
     problem:
@@ -102,6 +102,35 @@ export const projects: Project[] = [
         'Accessibility-first, dyslexia-friendly design',
         'Plain language and forgiving prompts',
         'Step by step, low-pressure learning',
+      ],
+    },
+  },
+  {
+    slug: 'ai-automation',
+    title: 'AI Automation for Good Living Web Co',
+    tagline: 'Running a content network with AI agents in production',
+    description:
+      'The AI stack behind my content sites. Agents handle content and affiliate scanning, keep affiliate links alive, generate imagery, and power on-site AI assistants grounded in real content. Practical AI in production, not demos.',
+    status: 'live',
+    technologies: ['Claude API', 'MCP Servers', 'Midjourney', 'RAG', 'Obsidian', 'Google APIs'],
+    featured: true,
+    order: 4,
+    problem:
+      'Building and running a network of content sites solo means a huge amount of repetitive work: finding content and affiliate opportunities, keeping links current, producing imagery, and answering reader questions. Doing it all by hand does not scale.',
+    approach:
+      'I automated the repetitive parts with AI agents and a stack of integrations. Content and niche affiliate scanning surface opportunities. An Amazon affiliate sync checks links and replaces ones that are outdated, moved or broken. Image generation runs through Midjourney wired in via MCP servers. The on-site assistants are grounded with RAG and Obsidian so they answer from a curated knowledge base, and the "Ask Optimal" assistant runs on the Claude API. Google mapping APIs handle location data where content needs it.',
+    outcome:
+      'A content network that largely maintains itself. The boring, error-prone jobs are automated and stay current, while I keep editorial judgement and final sign-off. It is also where I keep my AI skills genuinely hands-on rather than theoretical.',
+    whatIdDoDifferently:
+      'I would build proper logging and alerting in from the start. Some of the early automation was held together with tape, and knowing sooner when something silently failed would have saved time.',
+    details: {
+      technicalDetails: [
+        'Content and niche affiliate scanning agents',
+        'Automated Amazon affiliate sync, replacing outdated or broken links',
+        'Image generation via Midjourney and MCP servers',
+        'RAG and Obsidian knowledge base for on-site AI',
+        'Claude API powering the "Ask Optimal" assistant',
+        'Google mapping APIs and endpoints',
       ],
     },
   },

@@ -56,7 +56,7 @@ export default function AboutPage() {
             </a>{' '}
             and{' '}
             <a
-              href="https://glp1guide.co.uk"
+              href="https://glp1guide.co"
               target="_blank"
               rel="noopener noreferrer"
               className="link-underline text-[var(--foreground)]"
@@ -126,10 +126,10 @@ export default function AboutPage() {
               AI, music and building
             </h3>
             <p className="text-sm leading-relaxed text-[var(--foreground-muted)]">
-              I use Claude, MCP servers and custom agent workflows daily for job
-              scanning, content pipelines, deployments and email. When I&apos;m
-              not building automations I&apos;m usually in Logic Pro, making
-              something.
+              I use Claude, MCP servers and custom agent workflows daily to run
+              my content sites: affiliate scanning, image generation, RAG-backed
+              on-site AI and more. When I&apos;m not building automations
+              I&apos;m usually in Logic Pro, making something.
             </p>
           </motion.div>
         </div>

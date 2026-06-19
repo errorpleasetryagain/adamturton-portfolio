@@ -2,34 +2,40 @@
 title: Using AI Agents for Real Work
 date: June 15, 2026
 category: AI
-excerpt: How I use Claude Code and MCP servers to automate job scanning, content pipelines, and site management across six websites.
+excerpt: How I use Claude, MCP servers, RAG and a stack of APIs to run and automate a network of content sites. Practical AI in production, not demos.
 ---
 
 # Using AI Agents for Real Work
 
-I run six content websites alongside looking for my next role. Without automation, that would be impossible. Here's how I actually use AI agents day to day.
+I build and run a small network of content sites under Good Living Web Co. Doing that solo only works because I have automated most of the repetitive parts with AI. Here is what that actually looks like in production, not in a demo.
 
-## Job scanning
+## Content and affiliate scanning
 
-I built an automated job scan that runs daily. It searches LinkedIn and recruiter sites, scores each role against my criteria (sector fit, salary, location, culture), and produces a ranked shortlist. What used to take 45 minutes of scrolling now takes two minutes of reading.
+I run automated scans that watch for new content opportunities and new niche affiliate programmes worth joining. Instead of me manually checking for gaps and new partners, the agents surface them and score them against what each site needs. What used to be hours of scrolling is now a few minutes of reading a ranked list.
+
+## Keeping affiliate links alive
+
+Affiliate links rot. Products get discontinued, move, or go out of stock, and a dead link costs you both trust and revenue. So I automated the Amazon affiliate sync: the system checks links, flags anything outdated or broken, and replaces affiliates that have moved or been pulled. It keeps the whole network current without me hand-checking every page.
+
+## Image generation
+
+A lot of the imagery across the sites is generated through Midjourney, wired in via MCP servers so it runs as part of the pipeline rather than as a manual export-and-upload chore. The agent requests, retrieves and places images where they are needed.
+
+## RAG and the on-site AI
+
+The AI features on the sites are grounded in real content, not left to make things up. I use Obsidian and RAG databases so the assistants answer from a curated knowledge base. For the "Ask Optimal" assistant I use the Claude API directly, with the RAG layer keeping its answers accurate and on-topic. I also use Google's mapping APIs and endpoints where the content needs location data.
 
 ## Content pipelines
 
-Each of my sites publishes evidence-based articles. The pipeline works like this:
+Each site publishes evidence-based articles, and the pipeline runs like this:
 
-1. AI researches the topic and pulls relevant clinical trials
+1. AI researches the topic and pulls the relevant sources
 2. It drafts an article following my editorial guidelines
-3. I review, edit, and approve before publishing
+3. I review, edit and approve before anything publishes
 4. SEO metadata and structured data are generated automatically
 
-The key is the review step. AI does the heavy lifting on research and first drafts. I do the editorial judgement and fact-checking. Nothing publishes without my sign-off.
-
-## Site management
-
-I use MCP server integrations to connect Claude Code with Gmail, MailerLite, Vercel, and Notion. This means I can manage deployments, check email subscriber stats, and update site content from one interface.
+The review step is the whole point. AI does the heavy lifting on research and first drafts. I do the editorial judgement and the fact-checking. Nothing publishes without my sign-off.
 
 ## What I've learned
 
-AI agents are genuinely useful when you treat them as tools, not magic. They're good at repetitive tasks, research aggregation, and first drafts. They're bad at editorial judgement, nuance, and knowing when something sounds wrong.
-
-The 90+ articles across my sites were all researched and drafted with AI help, then reviewed and edited by me. That's the model that works: AI handles the legwork, I make the decisions.
+AI agents are genuinely useful when you treat them as tools, not magic. They are good at repetitive tasks, research aggregation, keeping things in sync, and first drafts. They are bad at editorial judgement, nuance, and knowing when something sounds wrong. The model that works for me is simple: AI handles the legwork, I make the decisions.

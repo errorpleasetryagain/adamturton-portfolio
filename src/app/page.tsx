@@ -139,7 +139,7 @@ export default function Home() {
               Using AI Agents for Real Work
             </h3>
             <p className="text-sm text-[var(--foreground-muted)]">
-              Claude Code, MCP servers, and automating content pipelines across six websites.
+              Claude, MCP servers, RAG and a stack of APIs running my content sites in production.
             </p>
             <Link href="/writing/ai-agents-production" className="absolute inset-0" aria-label="Read article" />
           </motion.article>
