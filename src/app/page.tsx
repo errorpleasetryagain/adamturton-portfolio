@@ -54,9 +54,10 @@ export default function Home() {
             variants={fadeUp}
             className="mb-8 max-w-[55ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl"
           >
-            I lead technology operations teams. Most recently at Starling Bank,
-            before that at Selfridges and Apple. I keep things running, and I am
-            at my best developing the people who run them.
+            I lead technology operations teams, with a real focus on developing
+            people. Most recently at Starling Bank, before that Selfridges and
+            Apple. The best part of the job is watching teams grow and helping
+            the people in them get better at what they do.
           </motion.p>
 
           {/* CTAs */}
@@ -220,7 +221,7 @@ export default function Home() {
               </span>
             </div>
             <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
-              MaleOptimal
+              Male Optimal
             </h3>
             <p className="text-sm text-[var(--foreground-muted)]">
               My main content site, evidence-based men&apos;s health. I write the

@@ -1,10 +1,7 @@
 import Link from 'next/link';
+import { brands, BrandLogo } from '@/components/ui/brand-logos';
 
-const builtWith = [
-  { name: 'Next.js', url: 'https://nextjs.org' },
-  { name: 'Vercel', url: 'https://vercel.com' },
-  { name: 'Cloudflare', url: 'https://cloudflare.com' },
-];
+const builtWith = [brands.nextjs, brands.vercel, brands.anthropic];
 
 export default function Footer() {
   return (
@@ -17,7 +14,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-6">
             <Link
-              href="https://linkedin.com/in/adamjturton"
+              href="https://www.linkedin.com/in/adam-j-turton-905344b0/"
               target="_blank"
               rel="noopener noreferrer"
               className="link-underline text-sm text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
@@ -38,16 +35,16 @@ export default function Footer() {
           <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
             Built with
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {builtWith.map((tool) => (
               <Link
                 key={tool.name}
                 href={tool.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
+                className="transition-transform duration-200 hover:-translate-y-0.5"
               >
-                {tool.name}
+                <BrandLogo brand={tool} />
               </Link>
             ))}
           </div>

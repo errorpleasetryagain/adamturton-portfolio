@@ -10,25 +10,35 @@ import { motion } from 'framer-motion';
 const tools = [
   'Apple',
   'macOS',
+  'iOS',
   'Jamf',
+  'Apple Business Manager',
   'Okta',
   'Google Workspace',
+  'Microsoft 365',
   'Cisco Meraki',
   'CrowdStrike',
   '1Password',
   'Jira',
+  'Confluence',
+  'Slack',
+  'Zoom',
+  'BambooHR',
+  'DocuSign',
+  'Brivo',
   'Next.js',
   'Claude',
 ];
 
 function LogoRow() {
   return (
-    <div className="flex shrink-0 items-center gap-12 pr-12 md:gap-16 md:pr-16">
+    <div className="flex shrink-0 items-center gap-10 pr-10 md:gap-14 md:pr-14">
       {tools.map((tool) => (
         <span
           key={tool}
-          className="whitespace-nowrap font-mono text-sm font-medium uppercase tracking-[0.15em] text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
+          className="inline-flex items-center gap-2 whitespace-nowrap font-mono text-sm font-medium uppercase tracking-[0.15em] text-[var(--foreground-muted)] transition-colors hover:text-[var(--foreground)]"
         >
+          <span className="h-1 w-1 rounded-full bg-[var(--accent-blue-text)]/40" aria-hidden />
           {tool}
         </span>
       ))}

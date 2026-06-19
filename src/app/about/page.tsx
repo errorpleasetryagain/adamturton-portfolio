@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ui/scroll-reveal';
+import Typewriter from '@/components/ui/typewriter';
 
 export default function AboutPage() {
   return (
@@ -16,7 +17,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16 text-center text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-6xl"
         >
-          Hello.
+          <Typewriter text="Hello." delay={0.3} stagger={0.12} />
         </motion.h1>
 
         <div className="mx-auto max-w-3xl text-left text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl [&_p]:mb-6">
@@ -51,7 +52,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="link-underline text-[var(--foreground)]"
             >
-              MaleOptimal
+              Male Optimal
             </a>{' '}
             and{' '}
             <a
@@ -82,85 +83,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Career Timeline */}
-      <section className="py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <h2 className="text-2xl font-medium tracking-tight text-[var(--foreground)]">
-            Timeline
-          </h2>
-        </motion.div>
-
-        <div className="space-y-0">
-          {[
-            {
-              period: '2023 \u2013 Present',
-              title: 'Technology Operations Manager',
-              company: 'Starling Bank',
-              detail: 'Leading the tech ops team, 11 direct reports and 23 in total, across multiple UK offices. Incident response, vendor management, and an international onboarding programme built with the People and Facilities teams.',
-            },
-            {
-              period: '2022 \u2013 2023',
-              title: 'Regional In-Store Technology Manager',
-              company: 'Selfridges',
-              detail: 'Ran in-store technology across the North region with a team of six engineers. POS, networking and AV through peak trading and premium brand events.',
-            },
-            {
-              period: '2021 \u2013 2022',
-              title: 'IS&T Retail Store Operations',
-              company: 'Apple',
-              detail: 'Moved from retail into Apple\u2019s corporate IS&T team. Supported store technologies: networks, POS systems and back of house infrastructure across the estate.',
-            },
-            {
-              period: '2019 \u2013 2022',
-              title: 'Genius',
-              company: 'Apple',
-              detail: 'ACMT-certified. Component-level Mac hardware repair, iOS diagnostics via GSX and AST 2. Mentored technical experts and specialists.',
-            },
-            {
-              period: '2018 \u2013 2019',
-              title: 'Technical Expert',
-              company: 'Apple',
-              detail: 'Triaged and diagnosed hardware and software issues at the Genius Bar. Authorised to perform iPhone hardware repairs. Trained new hires on diagnostic procedures.',
-            },
-            {
-              period: '2016 \u2013 2018',
-              title: 'Specialist',
-              company: 'Apple',
-              detail: 'Consultative sales and customer support across the Apple product range. Consistently top 10% for customer engagement scores.',
-            },
-          ].map((role, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="grid grid-cols-[100px_1fr] gap-6 border-b border-[var(--border)] py-6 md:grid-cols-[140px_1fr]"
-            >
-              <span className="text-sm font-medium text-[var(--foreground-muted)]">
-                {role.period}
-              </span>
-              <div>
-                <h3 className="font-medium text-[var(--foreground)]">
-                  {role.title}
-                </h3>
-                <p className="text-sm text-[var(--foreground-muted)]">
-                  {role.company}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--foreground-muted)]">
-                  {role.detail}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* Side Projects Summary */}
       <section className="py-24">
@@ -188,9 +110,8 @@ export default function AboutPage() {
               Content sites
             </h3>
             <p className="text-sm leading-relaxed text-[var(--foreground-muted)]">
-              I run six websites about men&apos;s health, supplements, and lifestyle.
-              90+ evidence-based articles, all built with Next.js and MDX.
-              MaleOptimal is the main one.
+              I write and run a few content sites on health and lifestyle, built
+              with Next.js and MDX. Male Optimal is the main one.
             </p>
           </motion.div>
 

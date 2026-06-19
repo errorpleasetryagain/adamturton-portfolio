@@ -86,7 +86,7 @@ export default function ContactPage() {
 
           {/* LinkedIn Card */}
           <motion.a
-            href="https://linkedin.com/in/adamjturton"
+            href="https://www.linkedin.com/in/adam-j-turton-905344b0/"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 24 }}
@@ -107,16 +107,18 @@ export default function ContactPage() {
               Connect professionally and see my full career history.
             </p>
             <span className="inline-flex items-center text-sm font-medium text-[var(--foreground)] group-hover:underline">
-              linkedin.com/in/adamjturton
+              linkedin.com/in/adam-j-turton
               <svg className="ml-1 h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
             </span>
           </motion.a>
 
-          {/* Email: MaleOptimal */}
+          {/* YouTube: Male Optimal */}
           <motion.a
-            href="mailto:adam@maleoptimal.co.uk"
+            href="https://youtube.com/@maleoptimal"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -124,19 +126,21 @@ export default function ContactPage() {
             className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 transition-all hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-[var(--foreground)]"
           >
             <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--background)]">
-              <svg className="h-5 w-5 text-[var(--foreground)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M22 6l-10 7L2 6" />
+              <svg className="h-5 w-5 text-[var(--foreground)]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </div>
             <h3 className="mb-2 text-lg font-medium text-[var(--foreground)]">
-              MaleOptimal
+              Male Optimal on YouTube
             </h3>
             <p className="mb-4 text-[var(--foreground-muted)]">
-              For anything to do with my content sites and projects.
+              Video content for my main site, Male Optimal.
             </p>
-            <span className="text-sm font-medium text-[var(--foreground)] group-hover:underline">
-              adam@maleoptimal.co.uk
+            <span className="inline-flex items-center text-sm font-medium text-[var(--foreground)] group-hover:underline">
+              youtube.com/@maleoptimal
+              <svg className="ml-1 h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
             </span>
           </motion.a>
 

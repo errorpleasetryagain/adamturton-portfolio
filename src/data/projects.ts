@@ -22,7 +22,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'maleoptimal',
-    title: 'MaleOptimal',
+    title: 'Male Optimal',
     tagline: 'Evidence-based men\'s health content site',
     description:
       'My main content site, focused on evidence-based men\'s health. I write the articles, handle the SEO, and run the affiliate and email side. Built with Next.js and MDX.',
@@ -78,34 +78,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'tradepick',
-    title: 'TradePick',
-    tagline: 'Tools and gear recommendations for trades',
-    description:
-      'A content site reviewing tools and kit for people who work in the trades. Built on the same Next.js and MDX foundation, with affiliate monetisation.',
-    status: 'live',
-    technologies: ['Next.js', 'MDX', 'Tailwind CSS', 'SEO', 'Awin'],
-    url: 'https://tradepick.co.uk',
-    featured: true,
-    order: 3,
-    problem:
-      'Buying decent tools is expensive and the advice online is often thin or pushed by whoever pays the most. I wanted straightforward, useful recommendations.',
-    approach:
-      'Same template, different audience. Focused on honest, practical write-ups and a clean reading experience, with affiliate links handled through Awin.',
-    outcome:
-      'A live site that rounds out the network and shows the template holds up across very different topics, from health to trade tools.',
-    whatIdDoDifferently:
-      'I\'d niche down on a few tool categories first rather than going broad, to build authority faster.',
-    details: {
-      technicalDetails: [
-        'Shared Next.js and MDX template',
-        'Affiliate integration (Awin)',
-        'SEO focused',
-        'Mobile-first reading experience',
-      ],
-    },
-  },
-  {
     slug: 'bash-tutor',
     title: 'Bash Tutor',
     tagline: 'A bash learning tool built for dyslexic people',
@@ -115,7 +87,7 @@ export const projects: Project[] = [
     technologies: ['Bash', 'CLI', 'Accessibility'],
     url: 'https://github.com/errorpleasetryagain/bash-tutor',
     featured: true,
-    order: 4,
+    order: 3,
     problem:
       'The command line assumes you read precisely and remember exact syntax. For dyslexic people that is a real barrier, and most tutorials make it worse with walls of dense text.',
     approach:

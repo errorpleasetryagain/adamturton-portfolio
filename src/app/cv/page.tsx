@@ -259,7 +259,7 @@ export default function CVPage() {
             Get in touch
           </a>
           <a
-            href="https://linkedin.com/in/adamjturton"
+            href="https://www.linkedin.com/in/adam-j-turton-905344b0/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full border border-[var(--border)] px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"

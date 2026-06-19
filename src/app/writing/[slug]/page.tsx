@@ -33,6 +33,66 @@ function parseFrontmatter(content: string) {
   return { frontmatter, content: content.slice(contentStart) };
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function inline(s: string): string {
+  // links [text](url), then bold **text**
+  return escapeHtml(s)
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--foreground)] underline underline-offset-2">$1</a>'
+    )
+    .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-medium text-[var(--foreground)]">$1</strong>');
+}
+
+/** A small, safe markdown-to-HTML converter for the basics we use. */
+function renderMarkdown(md: string): string {
+  const blocks = md.trim().split(/\n{2,}/);
+  return blocks
+    .map((block) => {
+      const b = block.trim();
+      if (!b) return '';
+      if (b.startsWith('# ')) {
+        // The page already shows the title; skip the leading H1.
+        return '';
+      }
+      if (b.startsWith('## ')) {
+        return `<h2 class="mt-10 mb-3 text-xl font-medium text-[var(--foreground)]">${inline(b.slice(3))}</h2>`;
+      }
+      if (b.startsWith('### ')) {
+        return `<h3 class="mt-8 mb-2 text-lg font-medium text-[var(--foreground)]">${inline(b.slice(4))}</h3>`;
+      }
+      // ordered list
+      if (/^\d+\.\s/.test(b)) {
+        const items = b
+          .split('\n')
+          .map((l) => l.replace(/^\d+\.\s/, '').trim())
+          .filter(Boolean)
+          .map((l) => `<li class="mb-2">${inline(l)}</li>`)
+          .join('');
+        return `<ol class="mb-5 ml-5 list-decimal space-y-1">${items}</ol>`;
+      }
+      // unordered list
+      if (/^[-*]\s/.test(b)) {
+        const items = b
+          .split('\n')
+          .map((l) => l.replace(/^[-*]\s/, '').trim())
+          .filter(Boolean)
+          .map((l) => `<li class="mb-2">${inline(l)}</li>`)
+          .join('');
+        return `<ul class="mb-5 ml-5 list-disc space-y-1">${items}</ul>`;
+      }
+      // paragraph
+      return `<p class="mb-5 leading-relaxed">${inline(b.replace(/\n/g, ' '))}</p>`;
+    })
+    .join('');
+}
+
 export default async function WritingPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = getAllPosts().find((p) => p.slug === slug);
@@ -100,10 +160,10 @@ export default async function WritingPostPage({ params }: PageProps) {
         )}
       </header>
 
-      {/* Content - render MDX directly */}
-      <div 
-        className="prose prose-lg max-w-none text-[var(--foreground-muted)]"
-        dangerouslySetInnerHTML={{ __html: mdxContent.replace(/\n/g, '<br/>') }}
+      {/* Content */}
+      <div
+        className="max-w-2xl text-lg text-[var(--foreground-muted)]"
+        dangerouslySetInnerHTML={{ __html: renderMarkdown(mdxContent) }}
       />
     </article>
   );

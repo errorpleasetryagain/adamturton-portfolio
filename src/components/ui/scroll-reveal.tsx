@@ -39,7 +39,7 @@ export default function ScrollReveal({ children, className }: ScrollRevealProps)
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 0.85', 'end 0.45'],
+    offset: ['start 0.7', 'end 0.62'],
   });
 
   const paragraphs = Array.isArray(children) ? children : [children];

@@ -65,6 +65,26 @@ const categories = [
       'Genuinely up to date, hands-on',
     ],
   },
+  {
+    title: 'Leadership competencies',
+    items: [
+      'Coaching and growing people',
+      'Difficult conversations done well',
+      'Building trust and psychological safety',
+      'Calm under pressure',
+      'Reading a room and adapting',
+    ],
+  },
+  {
+    title: 'Delivery & change',
+    items: [
+      'Office openings and onboarding programmes',
+      'Project and change management',
+      'Budget and cost awareness',
+      'Working across People, Facilities and Finance',
+      'Turning messy problems into clear plans',
+    ],
+  },
 ];
 
 export default function SkillsPage() {
