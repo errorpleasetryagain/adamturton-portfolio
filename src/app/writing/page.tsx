@@ -1,5 +1,5 @@
 import { getAllPosts } from '@/lib/posts';
-import WritingCards from '@/components/writing-cards';
+import CardSwap from '@/components/card-swap';
 
 export default async function WritingPage() {
   const posts = getAllPosts();
@@ -7,7 +7,7 @@ export default async function WritingPage() {
   return (
     <div className="mx-auto max-w-[var(--container-max)] px-6 py-24">
       {/* Header */}
-      <div className="mb-16 max-w-3xl">
+      <div className="mb-12 max-w-3xl">
         <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl">
           Blog
         </h1>
@@ -18,8 +18,10 @@ export default async function WritingPage() {
         </p>
       </div>
 
-      {/* Posts List */}
-      <WritingCards posts={posts} />
+      {/* Swapping card stack */}
+      <div className="py-8">
+        <CardSwap posts={posts} />
+      </div>
     </div>
   );
 }
