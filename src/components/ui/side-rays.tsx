@@ -9,11 +9,11 @@
 export default function SideRays() {
   // Each ray is a long, thin, blurred cone rotated out from the corner.
   const rays = [
-    { rotate: 4, width: 200, opacity: 0.155, blur: 40 },
-    { rotate: 18, width: 260, opacity: 0.113, blur: 55 },
-    { rotate: 34, width: 320, opacity: 0.085, blur: 65 },
-    { rotate: 52, width: 380, opacity: 0.056, blur: 80 },
-    { rotate: 72, width: 440, opacity: 0.035, blur: 90 },
+    { rotate: 4, width: 200, opacity: 0.124, blur: 40 },
+    { rotate: 18, width: 260, opacity: 0.090, blur: 55 },
+    { rotate: 34, width: 320, opacity: 0.068, blur: 65 },
+    { rotate: 52, width: 380, opacity: 0.045, blur: 80 },
+    { rotate: 72, width: 440, opacity: 0.028, blur: 90 },
   ];
 
   return (
@@ -23,7 +23,7 @@ export default function SideRays() {
         className="absolute right-0 top-0 h-[420px] w-[420px] translate-x-1/4 -translate-y-1/4"
         style={{
           background:
-            'radial-gradient(circle, color-mix(in srgb, var(--foreground) 13.5%, transparent) 0%, transparent 60%)',
+            'radial-gradient(circle, color-mix(in srgb, var(--foreground) 11%, transparent) 0%, transparent 60%)',
           filter: 'blur(30px)',
         }}
       />
