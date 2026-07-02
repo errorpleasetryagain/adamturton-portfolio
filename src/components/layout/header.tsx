@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import ThemeToggle from '@/components/ui/theme-toggle';
 
 const navLinks = [
   { href: '/about', label: 'About' },
@@ -70,12 +71,15 @@ export default function Header() {
             >
               Contact
             </Link>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile: theme toggle + menu button */}
+          <div className="flex items-center gap-1 md:hidden">
+            <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex md:hidden items-center justify-center rounded-full p-2 text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
+            className="flex items-center justify-center rounded-full p-2 text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
             aria-label="Toggle menu"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -86,6 +90,7 @@ export default function Header() {
               )}
             </svg>
           </button>
+          </div>
         </nav>
       </motion.header>
 

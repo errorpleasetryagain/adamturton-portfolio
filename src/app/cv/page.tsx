@@ -67,7 +67,7 @@ export default function CVPage() {
         </a>
 
         <p className="mt-4 text-sm text-[var(--foreground-muted)]">
-          Based in London. Open to remote.
+          Based in London.
         </p>
       </motion.section>
 
@@ -248,8 +248,8 @@ export default function CVPage() {
           Want to talk?
         </h2>
         <p className="mb-6 max-w-[60ch] text-[var(--foreground-muted)]">
-          I am looking for my next senior technology operations or IT management
-          role. London based, happy to work remotely.
+          Always happy to talk technology, leadership, or building things.
+          Based in London.
         </p>
         <div className="flex flex-wrap gap-4">
           <a

@@ -483,8 +483,7 @@ export default function ExperiencePage() {
             Get in touch
           </h2>
           <p className="mx-auto mb-8 max-w-[50ch] text-[var(--foreground-muted)]">
-            Looking for my next senior technology operations or IT management role.
-            London based, happy to work remotely.
+            Always happy to talk technology, leadership, or building things.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

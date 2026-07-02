@@ -150,7 +150,7 @@ export default function ProjectsPage() {
           Interested in working together?
         </h2>
         <p className="mx-auto mb-8 max-w-[50ch] text-[var(--foreground-muted)]">
-          Looking for my next senior tech ops or IT management role. London based, happy to work remotely.
+          Always happy to talk technology, leadership, or building things.
         </p>
         <Link
           href="/contact"

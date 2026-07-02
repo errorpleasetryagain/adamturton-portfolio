@@ -40,7 +40,7 @@ export default function AboutPage() {
               "My Apple background is genuine and hands-on. I'm an Apple Certified Mac Technician, so I've done the component level repair, the diagnostics, the macOS and iOS and MDM side of things, not just managed people who do it. That depth carries through everything since.",
               "Outside of work I build things. A few content sites in Next.js and MDX, and a lot of time spent with AI and agentic workflows. I use Claude and local models daily and build real automations with them, so when I say I'm up to date on AI I mean I'm using it, not reading about it.",
               "Away from a screen, music is the big one. I make it and I DJ. I cook most of my own meals, I'm in the gym four days a week, and I keep a pretty healthy lifestyle in general. I'll happily disappear on a long walk, and I collect trainers, which is a habit I have made peace with.",
-              "I have ADHD, so I work best with clarity, autonomy and a bit of variety. Based in London, looking for my next senior tech ops or IT management role.",
+              "I have ADHD, so I work best with clarity, autonomy and a bit of variety. Based in London.",
             ]}
           </ScrollReveal>
 

@@ -20,13 +20,13 @@ export default function ContactPage() {
           </div>
 
           <h1 className="mb-6 text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl lg:text-6xl">
-            Let&apos;s work together
+            Get in touch
           </h1>
 
           <p className="mb-8 max-w-[60ch] text-lg leading-relaxed text-[var(--foreground-muted)] md:text-xl">
-            I&apos;m looking for my next senior tech ops or IT management role.
-            London based, happy to work remotely. If you&apos;ve got something
-            that might fit, get in touch and let&apos;s talk.
+            Always happy to talk technology, leadership, or building things,
+            whether it&apos;s about my work, the sites I run, or a project
+            you&apos;ve got in mind. The best way to reach me is below.
           </p>
 
           <a

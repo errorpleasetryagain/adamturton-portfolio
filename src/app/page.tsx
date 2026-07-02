@@ -39,7 +39,7 @@ export default function Home() {
           <motion.div variants={fadeUp} className="mb-6">
             <div className="badge-breathe inline-flex items-center rounded-full border border-[var(--accent-green-bg)] bg-[var(--accent-green-bg)] px-3 py-1">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--accent-green-text)]">
-                Open to roles
+                People &amp; technology
               </span>
             </div>
           </motion.div>
@@ -282,8 +282,8 @@ export default function Home() {
             Get in touch
           </h2>
           <p className="relative mx-auto mb-8 max-w-[50ch] text-[var(--foreground-muted)]">
-            Looking for my next senior tech ops or IT management role. London
-            based, happy to work remotely.
+            Always happy to talk technology, leadership, or building things.
+            Drop me a line.
           </p>
           <div className="relative flex flex-wrap items-center justify-center gap-4">
             <Link
