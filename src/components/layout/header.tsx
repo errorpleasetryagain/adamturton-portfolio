@@ -27,7 +27,7 @@ export default function Header() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
       >
-        <nav className="flex items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--surface)]/80 px-2 py-2 shadow-[var(--shadow-sm)] backdrop-blur-xl">
+        <nav className="flex items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--surface)]/95 px-2 py-2 shadow-[var(--shadow-md)] backdrop-blur-2xl">
           <Link
             href="/"
             className="rounded-full px-4 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--border)]"
